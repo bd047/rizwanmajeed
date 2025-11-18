@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ahmad</title>
+
+    <!--
+    - favicon
+  -->
+    <!-- <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon"> -->
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/my-avatar.png"
+              alt="Richard hanrick"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Richard hanrick">Ahmad Shahzad</h1>
+
+            <p class="title">Automation Engineer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a
+                  href="mailto:a.shahzad2000july@gmail.com"
+                  class="contact-link"
+                  >a.shahzad2000july@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+12363132538" class="contact-link"
+                  >(+1) 2363132538</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+
+                <time datetime="1982-06-23">June 23, 1982</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Greater Toronto Area, Canada (Home)</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Skills</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              I’m a Machine Learning Engineer and Data Scientist specializing in
+              production-grade AI systems, including LLM pipelines, computer
+              vision, real-time analytics, and scalable cloud deployments.
+            </p>
+
+            <p>
+              I’ve delivered AI solutions across sports, healthcare, finance,
+              security, and marketing building robust systems that integrate
+              deep learning, NLP, speech models, and high-volume streaming data.
+              My expertise spans the full ML lifecycle: dataset design, model
+              development, evaluation, MLOps, and deployment via AWS/GCP.
+            </p>
+            <p>
+              I focus on building solutions that produce measurable business
+              impact, such as automated call classification, real-time
+              performance analytics, AI-driven reporting, and intelligent
+              search. I enjoy transforming complex challenges into scalable,
+              reliable, production-ready AI systems used in real-world
+              environments.
+            </p>
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/ai.png "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">AI Engineering</h4>
+
+                  <p class="service-item-text">
+                    Building production-level LLM, NLP, and CV systems with
+                    secure and scalable cloud architecture.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-dev.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Machine Learning Development
+                  </h4>
+
+                  <p class="service-item-text">
+                    Designing and training supervised, unsupervised, and deep
+                    learning models for real-world applications.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-app.svg"
+                    alt="mobile app icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Cloud & MLOps</h4>
+
+                  <p class="service-item-text">
+                    Deploying AI pipelines using AWS Lambda, EC2, S3, SageMaker,
+                    Bedrock, BigQuery, Docker, Kubernetes, CI/CD.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/software.png"
+                    alt="camera icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Software Development</h4>
+
+                  <p class="service-item-text">
+                    Developing backend systems, APIs, automations, and data
+                    pipelines using Python, FastAPI, Flask, PostgreSQL.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-nocode.png"
+                    alt="No-code automation icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">No-Code Automations</h4>
+
+                  <p class="service-item-text">
+                    I build fast, reliable automation systems using Zapier,
+                    Make.com, n8n, Airtable, and Notion—ideal for SMEs wanting
+                    powerful workflow automation without complex engineering.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--  - #RESUME  -->
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Thompson Rivers University
+                </h4>
+
+                <span>2023 — 2025</span>
+
+                <!-- Degree -->
+                <h5 class="h5 timeline-item-degree">Masters in Data Science</h5>
+
+                <p class="timeline-text">
+                  Focused on applied machine learning, data engineering, and
+                  advanced analytics with hands-on work in computer vision, NLP,
+                  and large-scale data systems.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Lahore University of Management Sciences
+                </h4>
+
+                <!-- Graduation year / Study duration -->
+                <span>2018 — 2022</span>
+
+                <!-- Degree -->
+                <h5 class="h5 timeline-item-degree">
+                  BS Electrical Engineering
+                </h5>
+
+                <p class="timeline-text">
+                  Comprehensive engineering program emphasizing mathematics,
+                  signals, systems, and core AI foundations including ML, deep
+                  learning, and computer vision.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Data Scientist — Nexentria (Lithuania)
+                </h4>
+
+                <span>2024 — 2025</span>
+
+                <p class="timeline-text">
+                  Built automated medical transcription and PHI-redaction
+                  systems. Created HIPAA-compliant anonymization workflows.
+                  Deployed serverless pipelines via AWS Lambda, SageMaker,
+                  Bedrock. Automated form population & operator assignment.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Machine Learning Engineer — Athena AI
+                </h4>
+
+                <span>2023 — 2024</span>
+
+                <p class="timeline-text">
+                  Built a full AI call-classification system across Deepgram,
+                  GPT-4o, AWS, and BigQuery. Developed a LangGraph-powered
+                  basketball analytics agent integrating Kafka, Milvus, MinIO.
+                  Created multi-modal advertisement models (93% F1). Developed
+                  advanced CV systems for sports analytics (97% accuracy).
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Machine Learning Engineer — Omno AI
+                </h4>
+
+                <span>2022 — 2023</span>
+
+                <p class="timeline-text">
+                  Trained and deployed ML/CV models end-to-end. Integrated ML
+                  into existing production systems. Delivered four major
+                  projects within 6 months.
+                </p>
+              </li>
+            </ol>
+          </section>
+        </article>
+        <!-- END RESUME -->
+
+        <!-- ================= SKILLS PAGE ================= -->
+        <article class="skills" data-page="skills">
+          <header>
+            <h2 class="h2 article-title">My Skills</h2>
+          </header>
+
+          <section class="skills-category-nav">
+            <button class="skills-tab active" data-skill-tab="programming">
+              Programming
+            </button>
+            <button class="skills-tab" data-skill-tab="ml">
+              ML & Deep Learning
+            </button>
+            <button class="skills-tab" data-skill-tab="nlp">NLP & LLMs</button>
+            <button class="skills-tab" data-skill-tab="vision">
+              Computer Vision
+            </button>
+            <button class="skills-tab" data-skill-tab="mlops">
+              Cloud & MLOps
+            </button>
+            <button class="skills-tab" data-skill-tab="backend">
+              APIs & Back-End
+            </button>
+            <button class="skills-tab" data-skill-tab="tools">
+              Tools & Platforms
+            </button>
+            <button class="skills-tab" data-skill-tab="ai-llm">
+              AI & LLMs
+            </button>
+            <button class="skills-tab" data-skill-tab="vision-3d">
+              CV & 3D AI
+            </button>
+            <button class="skills-tab" data-skill-tab="mlops-core">
+              MLOps
+            </button>
+            <button class="skills-tab" data-skill-tab="backend-advanced">
+              Advanced Back-End
+            </button>
+          </section>
+
+          <section class="skills-display">
+            <!-- Programming -->
+            <div class="skill-panel active" data-skill-content="programming">
+              <h3 class="skill-heading">Programming & Scripting</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/python.jfif" alt="Python" />
+                  <span>Python (Advanced)</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/bash.png" alt="Bash" />
+                  <span>Bash</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/R.png" alt="R" />
+                  <span>R (Intermediate)</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/sql.png" alt="SQL" />
+                  <span>SQL</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ML -->
+            <div class="skill-panel" data-skill-content="ml">
+              <h3 class="skill-heading">Machine Learning & Deep Learning</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/pytorch.jfif" />
+                  <span>PyTorch</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/tensor.png" />
+                  <span>TensorFlow</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/scikit.png" />
+                  <span>Scikit-Learn</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/xgboost.png" />
+                  <span>XGBoost</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- NLP -->
+            <div class="skill-panel" data-skill-content="nlp">
+              <h3 class="skill-heading">NLP & LLM Integration</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/gpt.png" />
+                  <span>GPT Models</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/langchain.png" />
+                  <span>LangChain</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/langraph.png" />
+                  <span>LangGraph</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/stt.jfif" />
+                  <span>Deepgram STT</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Computer Vision -->
+            <div class="skill-panel" data-skill-content="vision">
+              <h3 class="skill-heading">Computer Vision</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/yolo.png" />
+                  <span>YOLOv8</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/open cv.png" />
+                  <span>OpenCV</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/mideapine.png" />
+                  <span>MediaPipe</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- MLOps -->
+            <div class="skill-panel" data-skill-content="mlops">
+              <h3 class="skill-heading">Data Engineering & MLOps</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/aws.png" />
+                  <span>AWS</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/docker.png" />
+                  <span>Docker</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/kuber.png" />
+                  <span>Kubernetes</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/bigquery.png" />
+                  <span>BigQuery</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back-end -->
+            <div class="skill-panel" data-skill-content="backend">
+              <h3 class="skill-heading">Back-End & APIs</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/api.png" />
+                  <span>FastAPI</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/flask.jfif" />
+                  <span>Flask</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/postgre.jfif" />
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/mongodb.png" />
+                  <span>MongoDB</span>
+                </div>
+              </div>
+            </div>
+            <!-- Tools -->
+            <div class="skill-panel" data-skill-content="tools">
+              <h3 class="skill-heading">Tools & Platforms</h3>
+
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/git.png" alt="Git" />
+                  <span>Git</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/github.png" alt="GitHub" />
+                  <span>GitHub</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/linux.jfif" alt="Linux" />
+                  <span>Linux CLI</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/jupyter.png" alt="Jupyter" />
+                  <span>Jupyter Notebook</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/looker.jfif" alt="Looker" />
+                  <span>Looker Studio</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/milos.png" alt="Milvus" />
+                  <span>Milvus</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/redis.png" alt="Redis" />
+                  <span>Redis</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/minio.png" alt="MinIO" />
+                  <span>MinIO</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/tavily.png" alt="Tavily" />
+                  <span>Tavily</span>
+                </div>
+              </div>
+            </div>
+            <!-- AI & LLMs -->
+            <div class="skill-panel" data-skill-content="ai-llm">
+              <h3 class="skill-heading">AI & LLMs</h3>
+
+              <ul class="skills-list-text">
+                <li>Supervised / Unsupervised Learning</li>
+                <li>Time Series Forecasting</li>
+                <li>Predictive Modeling</li>
+                <li>Model Evaluation (F1, AUC)</li>
+                <li>LangChain, LangGraph, RAG</li>
+                <li>GPT APIs (3.5, 4, 4o), LLaMA Index</li>
+                <li>Speech: Deepgram, ElevenLabs, Voice Cloning</li>
+              </ul>
+            </div>
+
+            <!-- Computer Vision & 3D AI -->
+            <div class="skill-panel" data-skill-content="vision-3d">
+              <h3 class="skill-heading">Computer Vision & 3D AI</h3>
+
+              <ul class="skills-list-text">
+                <li>Object Detection, Segmentation, Action Recognition</li>
+                <li>YOLOv8, OpenCV, MediaPipe, ConvLSTM</li>
+                <li>Pose Estimation</li>
+                <li>3D Vision: Point Cloud Segmentation, Depth Estimation</li>
+              </ul>
+            </div>
+
+            <!-- MLOps & Infrastructure -->
+            <div class="skill-panel" data-skill-content="mlops-core">
+              <h3 class="skill-heading">MLOps & Infrastructure</h3>
+
+              <ul class="skills-list-text">
+                <li>AWS (Lambda, EC2, S3, SageMaker, Bedrock, EventBridge)</li>
+                <li>GCP (BigQuery, Looker Studio)</li>
+                <li>Docker, Kubernetes</li>
+                <li>Kafka, SQS</li>
+                <li>GitHub Actions, Jenkins</li>
+              </ul>
+            </div>
+
+            <!-- APIs & Back-End Engineering -->
+            <div class="skill-panel" data-skill-content="backend-advanced">
+              <h3 class="skill-heading">APIs & Back-End Engineering</h3>
+
+              <ul class="skills-list-text">
+                <li>RESTful APIs, Flask, FastAPI</li>
+                <li>boto3, Webhooks</li>
+                <li>PostgreSQL, MySQL, MongoDB, DynamoDB</li>
+              </ul>
+            </div>
+          </section>
+        </article>
+
+        <!-- ===== PORTFOLIO SECTION ===== -->
+
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>AI & Automations</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>AI Agents</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>Web Development</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>Computer Vision</button>
+              </li>
+            </ul>
+
+            <!-- ===== MOBILE DROPDOWN FILTER ===== -->
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>AI & Automations</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>AI Agents</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Web Development</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Computer Vision</button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- ===== PROJECT GRID ===== -->
+            <ul class="project-list">
+              <!-- ⚙️ AI & AUTOMATIONS -->
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI & Automations"
+              >
+                <a href="project-details.html?id=callDashboard">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-call-dashboard.jpg"
+                      alt="AI Call Dashboard"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    AI-Powered Call Classification & Insight Dashboard
+                  </h3>
+                  <p class="project-category">AI & Automations</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI & Automations"
+              >
+                <a href="project-details.html?id=adClassification">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-ad-classification.jpg"
+                      alt="Ad Classification System"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    AI Advertisement Content Classification System
+                  </h3>
+                  <p class="project-category">AI & Automations</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI & Automations"
+              >
+                <a href="project-details.html?id=surveyPlatform">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-survey.jpg"
+                      alt="AI Survey Platform"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    AI-Powered Survey Platform for Personalized Customer
+                    Feedback
+                  </h3>
+                  <p class="project-category">AI & Automations</p>
+                </a>
+              </li>
+
+              <!-- 🤖 AI AGENTS -->
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI Agents"
+              >
+                <a href="project-details.html?id=mentorshipMatch">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-mentorship.jpg"
+                      alt="Mentorship Platform"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    Medical Mentorship Matchmaking Platform
+                  </h3>
+                  <p class="project-category">AI Agents</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI Agents"
+              >
+                <a href="project-details.html?id=influencerIntel">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-influencer.jpg"
+                      alt="Influencer Intelligence"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    AI-Powered Influencer & Market Intelligence System
+                  </h3>
+                  <p class="project-category">AI Agents</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="AI Agents"
+              >
+                <a href="project-details.html?id=dentalCRM">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-dental.jpg"
+                      alt="Dental CRM Automation"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    Dental CRM Automation (HIPAA Compliance)
+                  </h3>
+                  <p class="project-category">AI Agents</p>
+                </a>
+              </li>
+
+              <!-- 💻 WEB DEVELOPMENT -->
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="Web Development"
+              >
+                <a href="project-details.html?id=basketballBot">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-basketball.jpg"
+                      alt="Basketball Chatbot"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    Basketball Performance Analysis Chatbot
+                  </h3>
+                  <p class="project-category">Web Development</p>
+                </a>
+              </li>
+
+              <!-- 📸 COMPUTER VISION -->
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="Computer Vision"
+              >
+                <a href="project-details.html?id=mirrorVision">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-mirrorvision.jpg"
+                      alt="MirrorVision iOS App"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    MirrorVision – iOS Pose Recognition App
+                  </h3>
+                  <p class="project-category">Computer Vision</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="Computer Vision"
+              >
+                <a href="project-details.html?id=cfbSorting">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-cfb.jpg"
+                      alt="CFB LEGO Sorting"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">LEGO Sorting System for CFB</h3>
+                  <p class="project-category">Computer Vision</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="Computer Vision"
+              >
+                <a href="project-details.html?id=anglerVision">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/project-anglervision.jpg"
+                      alt="AnglerVision"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">
+                    AnglerVision – Sports Fishing AI System
+                  </h3>
+                  <p class="project-category">Computer Vision</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #BLOG
+      -->
+
+        <article class="blog" data-page="blog">
+          <header>
+            <h2 class="h2 article-title">Blog</h2>
+          </header>
+
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-1.jpg"
+                      alt="Design conferences in 2022"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Design conferences in 2022
+                    </h3>
+
+                    <p class="blog-text">
+                      Veritatis et quasi architecto beatae vitae dicta sunt,
+                      explicabo.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-2.jpg"
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Best fonts every designer
+                    </h3>
+
+                    <p class="blog-text">
+                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis
+                      est eligendi.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-3.jpg"
+                      alt="Design digest #80"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                    <p class="blog-text">
+                      Excepteur sint occaecat cupidatat no proident, quis
+                      nostrum exercitationem ullam corporis suscipit.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-4.jpg"
+                      alt="UI interactions of the week"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      UI interactions of the week
+                    </h3>
+
+                    <p class="blog-text">
+                      Enim ad minim veniam, consectetur adipiscing elit, quis
+                      nostrud exercitation ullamco laboris nisi.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-5.jpg"
+                      alt="The forgotten art of spacing"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      The forgotten art of spacing
+                    </h3>
+
+                    <p class="blog-text">
+                      Maxime placeat, sed do eiusmod tempor incididunt ut labore
+                      et dolore magna aliqua.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-6.jpg"
+                      alt="Design digest #79"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                    <p class="blog-text">
+                      Optio cumque nihil impedit uo minus quod maxime placeat,
+                      velit esse cillum.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #CONTACT
+      -->
+
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <!-- 🌍 Map Section -->
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+                width="400"
+                height="300"
+                loading="lazy"
+              ></iframe>
+            </figure>
+          </section>
+
+          <!-- ✉️ Contact Form -->
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <section class="contact-form">
+              <h3 class="h3 form-title">Contact Form</h3>
+
+              <!-- ✅ Formspree integrated form -->
+              <form
+                action="https://formspree.io/f/mdkyoodl"
+                method="POST"
+                class="form"
+                id="contact-form"
+              >
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    name="fullname"
+                    class="form-input"
+                    placeholder="Full name"
+                    required
+                  />
+
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+
+                <textarea
+                  name="message"
+                  class="form-input"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+
+                <button class="form-btn" type="submit">
+                  <ion-icon name="paper-plane"></ion-icon>
+                  <span>Send Message</span>
+                </button>
+              </form>
+
+              <!-- ✅ Success message (hidden by default) -->
+              <p
+                id="success-message"
+                style="
+                  display: none;
+                  color: #90ee90;
+                  margin-top: 15px;
+                  text-align: center;
+                "
+              >
+                ✅ Your message has been sent successfully! Thank you for
+                reaching out.
+              </p>
+
+              <!-- ❌ Error message -->
+              <p
+                id="error-message"
+                style="
+                  display: none;
+                  color: #ff6666;
+                  margin-top: 15px;
+                  text-align: center;
+                "
+              >
+                ❌ Something went wrong. Please try again later.
+              </p>
+            </section>
+
+            <script>
+              // ✅ JavaScript for success/error messages
+              const form = document.getElementById("contact-form");
+              const successMsg = document.getElementById("success-message");
+              const errorMsg = document.getElementById("error-message");
+
+              form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                try {
+                  const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { Accept: "application/json" },
+                  });
+
+                  if (response.ok) {
+                    form.reset();
+                    successMsg.style.display = "block";
+                    errorMsg.style.display = "none";
+                  } else {
+                    successMsg.style.display = "none";
+                    errorMsg.style.display = "block";
+                  }
+                } catch (error) {
+                  successMsg.style.display = "none";
+                  errorMsg.style.display = "block";
+                }
+              });
+            </script>
+          </section>
+
+          <!-- 📅 Book a Call Section -->
+          <section class="contact-form" style="margin-top: 3rem">
+            <h3 class="h3 form-title">Book a Call</h3>
+
+            <!-- Calendly Inline Embed -->
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/athena-ai-sol/consultation"
+            ></div>
+
+            <script
+              type="text/javascript"
+              src="https://assets.calendly.com/assets/external/widget.js"
+              async
+            ></script>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/projects-data.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
