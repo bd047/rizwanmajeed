@@ -1,109 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Details</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/js/projects-data.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
 
-<body>
-  <main>
-    <aside class="sidebar">
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Ahmad Shahzad" width="80">
-        </figure>
-        <div class="info-content">
-          <h1 class="name">Ahmad Shahzad</h1>
-          <p class="title">Automation Engineer</p>
-        </div>
-        <a href="index.html" class="form-btn">← Back to Portfolio</a>
-      </div>
-    </aside>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <div class="main-content">
-      <article class="project-details active" data-page="project-details">
-        <header>
-          <h2 class="h2 article-title" id="project-title"></h2>
-        </header>
+    <!-- Fonts (same as index) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-        <section class="project-content">
-          <figure>
-            <img id="project-image" src="" alt="Project image" loading="lazy">
+    <!-- Data -->
+    <script src="./assets/js/projects-data.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/my-avatar.png"
+              alt="Ahmad Shahzad"
+              width="80"
+            />
           </figure>
 
-          <p id="project-description"></p>
-
-          <h3>Technologies Used</h3>
-          <ul id="project-tech"></ul>
-
-          <h3>Key Features</h3>
-          <ul id="project-features"></ul>
-
-          <!-- Added Media Section -->
-          <section id="project-media" style="margin-top: 2rem;"></section>
-
-          <a href="index.html" class="form-btn" style="margin-top:2rem;">← Back to Portfolio</a>
-        </section>
-      </article>
-    </div>
-  </main>
-
-  <script>
-    // Get project ID from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get("id");
-
-    // Find the project from our data
-    const project = projectsData[projectId];
-
-    if (project) {
-      document.getElementById("project-title").textContent = project.title;
-      document.getElementById("project-image").src = project.image;
-      document.getElementById("project-description").innerHTML = project.description;
-
-      const techList = document.getElementById("project-tech");
-      project.technologies.forEach(t => {
-        const li = document.createElement("li");
-        li.textContent = t;
-        techList.appendChild(li);
-      });
-
-      const featList = document.getElementById("project-features");
-      project.features.forEach(f => {
-        const li = document.createElement("li");
-        li.textContent = f;
-        featList.appendChild(li);
-      });
-
-      // 🎥 VIDEO / SLIDES SECTION
-      const mediaSection = document.getElementById("project-media");
-
-      if (project.videoUrl) {
-        mediaSection.innerHTML += `
-          <h3>🎥 Project Demo</h3>
-          <div style="margin-top:1rem;">
-            <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen
-              style="width:100%; height:400px; border-radius:10px;"></iframe>
+          <div class="info-content">
+            <h1 class="name">Ahmad Shahzad</h1>
+            <p class="title">Automation Engineer</p>
           </div>
-        `;
-      }
 
-      if (project.slidesUrl) {
-        mediaSection.innerHTML += `
-          <h3>📊 Presentation Slides</h3>
-          <div style="margin-top:1rem;">
-            <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen
-              style="width:100%; height:480px; border-radius:10px;"></iframe>
-          </div>
-        `;
-      }
+          <a href="index.html#portfolio" class="form-btn"
+            >← Back to Portfolio</a
+          >
+        </div>
+      </aside>
 
-    } else {
-      document.getElementById("project-title").textContent = "Project Not Found";
-    }
-  </script>
-</body>
+      <!-- Main -->
+      <div class="main-content">
+        <article class="project-details active" data-page="project-details">
+          <section class="pd-wrap">
+            <!-- HERO -->
+            <div class="pd-hero">
+              <div class="pd-hero-img">
+                <img
+                  id="project-image"
+                  src=""
+                  alt="Project image"
+                  loading="eager"
+                />
+              </div>
+
+              <div class="pd-hero-meta">
+                <p class="pd-badge" id="project-category"></p>
+                <h2 class="pd-title" id="project-title">Project</h2>
+                <p class="pd-overview" id="project-overview"></p>
+
+                <!-- quick buttons from project.links -->
+                <div class="pd-actions" id="pd-actions"></div>
+
+                <!-- <a href="index.html#portfolio" class="pd-back-top"
+                  >← Back to Portfolio</a
+                > -->
+              </div>
+            </div>
+
+            <!-- GRID: Tech + Functionalities -->
+            <div class="pd-grid">
+              <div class="pd-card" id="tech-wrap" style="display: none">
+                <h3 class="pd-h3">Tech Stack</h3>
+                <ul class="pd-chips" id="project-tech"></ul>
+              </div>
+
+              <div class="pd-card" id="func-wrap" style="display: none">
+                <h3 class="pd-h3">Functionalities</h3>
+                <ul class="pd-list" id="project-functionalities"></ul>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div
+              class="pd-card"
+              id="project-description-wrap"
+              style="display: none"
+            >
+              <h3 class="pd-h3">Details</h3>
+              <div class="pd-rich" id="project-description"></div>
+            </div>
+
+            <!-- Links list (optional, in addition to buttons) -->
+            <div class="pd-card" id="links-wrap" style="display: none">
+              <h3 class="pd-h3">Links</h3>
+              <ul class="pd-links" id="project-links"></ul>
+            </div>
+
+            <!-- Media -->
+            <div class="pd-card">
+              <h3 class="pd-h3">Media</h3>
+              <section id="project-media" style="margin-top: 12px"></section>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get("id");
+
+        if (typeof projectsData === "undefined") {
+          document.getElementById("project-title").textContent =
+            "projects-data.js not loaded";
+          return;
+        }
+
+        const project = projectsData?.[projectId];
+
+        const setList = (elId, items) => {
+          const ul = document.getElementById(elId);
+          ul.innerHTML = "";
+          (items || []).forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+          });
+        };
+
+        // Chips renderer (Tech stack)
+        const setChips = (elId, items) => {
+          const ul = document.getElementById(elId);
+          ul.innerHTML = "";
+          (items || []).forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+          });
+        };
+
+        const setLinks = (linksObj) => {
+          const ul = document.getElementById("project-links");
+          ul.innerHTML = "";
+          if (!linksObj) return;
+
+          const entries = Object.entries(linksObj).filter(([_, v]) => !!v);
+          entries.forEach(([label, href]) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = href;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.textContent = label;
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+        };
+
+        const setActionButtons = (linksObj) => {
+          const actions = document.getElementById("pd-actions");
+          actions.innerHTML = "";
+          if (!linksObj) return;
+
+          Object.entries(linksObj).forEach(([label, href]) => {
+            if (!href) return;
+            const a = document.createElement("a");
+            a.href = href;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.className = "pd-btn";
+            a.textContent = label;
+            actions.appendChild(a);
+          });
+        };
+
+        if (!project) {
+          document.getElementById("project-title").textContent =
+            "Project Not Found";
+          document.getElementById("project-category").textContent =
+            "Invalid or missing project id.";
+          return;
+        }
+
+        // Title + category
+        document.getElementById("project-title").textContent =
+          project.title || "Project";
+        document.title = `${project.title || "Project"} | Ahmad Shahzad`;
+        document.getElementById("project-category").textContent =
+          project.category || "";
+
+        // Image
+        const img = document.getElementById("project-image");
+        img.src = project.image || "./assets/images/project-placeholder.jpg";
+        img.alt = project.title || "Project image";
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = "./assets/images/project-placeholder.jpg";
+        };
+
+        // Overview
+        const overviewEl = document.getElementById("project-overview");
+        if (project.overview) {
+          overviewEl.textContent = project.overview;
+        } else if (project.description) {
+          const text =
+            typeof project.description === "string"
+              ? project.description.replace(/<[^>]*>/g, "").trim()
+              : "";
+          overviewEl.textContent = text ? text.split(".")[0] + "." : "";
+        } else {
+          overviewEl.textContent = "";
+        }
+
+        // Details
+        if (project.description) {
+          document.getElementById("project-description-wrap").style.display =
+            "block";
+          document.getElementById("project-description").innerHTML =
+            project.description;
+        }
+
+        // Tech Stack
+        const tech = project.technologies || project.techStack || [];
+        if (tech.length) {
+          document.getElementById("tech-wrap").style.display = "block";
+          setChips("project-tech", tech);
+        }
+
+        // Functionalities
+        const funcs = project.features || project.functionalities || [];
+        if (funcs.length) {
+          document.getElementById("func-wrap").style.display = "block";
+          setList("project-functionalities", funcs);
+        }
+
+        // Links
+        if (project.links) {
+          document.getElementById("links-wrap").style.display = "block";
+          setLinks(project.links);
+          setActionButtons(project.links);
+        } else {
+          // Still show buttons for video/slides if you want later
+          document.getElementById("pd-actions").innerHTML = "";
+        }
+
+        // Media
+        const mediaSection = document.getElementById("project-media");
+        mediaSection.innerHTML = "";
+
+        if (project.videoUrl) {
+          mediaSection.innerHTML += `
+            <h4 style="margin: 0 0 10px 0;">🎥 Project Demo</h4>
+            <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen></iframe>
+          `;
+        }
+
+        if (project.slidesUrl) {
+          mediaSection.innerHTML += `
+            <h4 style="margin: 16px 0 10px 0;">📊 Presentation Slides</h4>
+            <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen></iframe>
+          `;
+        }
+
+        if (!project.videoUrl && !project.slidesUrl) {
+          mediaSection.innerHTML = `<p style="opacity:0.85;">No media added for this project yet.</p>`;
+        }
+      });
+    </script>
+  </body>
 </html>

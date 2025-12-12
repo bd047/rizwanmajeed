@@ -1976,3 +1976,248 @@ textarea.form-input::-webkit-resizer {
     min-height: 380px;
   }
 }
+
+/* new csss */
+
+/* =========================
+   Project Details – UI Upgrade
+========================= */
+
+.pd-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px;
+}
+
+.pd-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--eerie-black-2, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.08));
+}
+
+.pd-hero-img img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.pd-hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pd-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.1));
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pd-title {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.pd-overview {
+  opacity: 0.9;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.pd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.pd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.12));
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.pd-btn:hover {
+  transform: translateY(-1px);
+  transition: 0.15s ease;
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.pd-card {
+  margin-top: 14px;
+  padding: 16px 16px;
+  border-radius: 18px;
+  background: var(--eerie-black-2, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.08));
+}
+
+.pd-h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+}
+
+.pd-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.pd-chips li {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.12));
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+}
+
+.pd-list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.pd-rich {
+  line-height: 1.75;
+  opacity: 0.95;
+}
+
+.pd-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.pd-links a {
+  display: inline-flex;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--jet, rgba(255, 255, 255, 0.12));
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+}
+
+/* Responsive iframes */
+#project-media iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .pd-hero {
+    grid-template-columns: 1fr;
+  }
+  .pd-hero-img img {
+    height: 220px;
+  }
+  .pd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Project Details: text colors (match your dark gradient bg) ===== */
+.project-details .pd-title,
+.project-details .pd-h3,
+.project-details h4 {
+  color: hsla(0, 0%, 100%, 0.96);
+}
+
+.project-details .pd-overview,
+.project-details .pd-rich,
+.project-details .pd-list,
+.project-details #project-description,
+.project-details #project-overview {
+  color: hsla(0, 0%, 100%, 0.78);
+  line-height: 1.7;
+}
+
+.project-details .pd-badge {
+  color: hsla(0, 0%, 100%, 0.88);
+}
+
+.project-details .pd-chips li {
+  color: hsla(0, 0%, 100%, 0.88);
+}
+
+.project-details .pd-links a,
+.project-details .pd-btn {
+  color: hsla(0, 0%, 100%, 0.92);
+}
+
+/* back to portfolio */
+
+.pd-back-top {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 9999;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: hsla(0, 0%, 100%, 0.92);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.pd-back-top:hover {
+  transform: translateY(-1px);
+  transition: 0.15s ease;
+}
+
+@media (max-width: 600px) {
+  .pd-back-top {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* 
+css for thumbnails */
+
+/* Portfolio grid thumbnail fit */
+.project-img {
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 16 / 10; /* choose one ratio for all cards */
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* fills the card nicely */
+  object-position: center; /* keeps it centered */
+}
