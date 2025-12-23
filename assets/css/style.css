@@ -2324,3 +2324,87 @@ Live button
   filter: none !important;
   opacity: 1 !important;
 }
+
+.service-icon-box img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* =========================
+   SERVICE SECTION UI FIX
+   ========================= */
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* card */
+.service-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 150px; /* ✅ consistent size */
+  transition: transform 0.15s ease, border 0.15s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* icon container */
+.service-icon-box {
+  width: 70px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* icon itself */
+.service-icon-box img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* text area */
+.service-content-box {
+  flex: 1;
+}
+
+.service-item-title {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.service-item-text {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.45;
+  font-size: 14px;
+}
+.service-icon-box img {
+  width: 28px;
+  height: 28px;
+}

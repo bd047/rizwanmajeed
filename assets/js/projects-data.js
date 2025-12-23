@@ -43,6 +43,12 @@ const projectsData = {
       "LLM classification + summaries: GPT-4 produces structured intent/service tags, lead-quality labeling, and call summaries (with rationale/key points).",
       "Closed-loop analytics: Writes tags back to CallRail, stores full outputs in BigQuery, and powers Looker Studio dashboards for campaign/call-source trends.",
     ],
+    images: [
+      "./assets/images/plumber_seo/Slide1.PNG",
+      "./assets/images/plumber_seo/Slide2.PNG",
+      "./assets/images/plumber_seo/Slide3.PNG",
+      "./assets/images/plumber_seo/Slide4.PNG",
+    ],
     videoUrl:
       "https://drive.google.com/file/d/1U7Et5udUBDqohsMUByUN1wAW_muxNTIM/preview",
   },
@@ -92,12 +98,12 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide6.jpg",
+      "./assets/images/plumber_seo/Slide1.jpg",
+      "./assets/images/plumber_seo/Slide2.jpg",
+      "./assets/images/plumber_seo/Slide3.jpg",
+      "./assets/images/plumber_seo/Slide4.jpg",
+      "./assets/images/plumber_seo/Slide5.jpg",
+      "./assets/images/plumber_seo/Slide6.jpg",
     ],
   },
 
@@ -145,12 +151,12 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide6.jpg",
+      "./assets/images/plumber_seo/Slide1.jpg",
+      "./assets/images/plumber_seo/Slide2.jpg",
+      "./assets/images/plumber_seo/Slide3.jpg",
+      "./assets/images/plumber_seo/Slide4.jpg",
+      "./assets/images/plumber_seo/Slide5.jpg",
+      "./assets/images/plumber_seo/Slide6.jpg",
     ],
   },
 
