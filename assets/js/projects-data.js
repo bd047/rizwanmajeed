@@ -98,12 +98,12 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/plumber_seo/Slide1.jpg",
-      "./assets/images/plumber_seo/Slide2.jpg",
-      "./assets/images/plumber_seo/Slide3.jpg",
-      "./assets/images/plumber_seo/Slide4.jpg",
-      "./assets/images/plumber_seo/Slide5.jpg",
-      "./assets/images/plumber_seo/Slide6.jpg",
+      "./assets/images/Advertisement_Content/Slide1.jpg",
+      "./assets/images/Advertisement_Content/Slide2.jpg",
+      "./assets/images/Advertisement_Content/Slide3.jpg",
+      "./assets/images/Advertisement_Content/Slide4.jpg",
+      "./assets/images/Advertisement_Content/Slide5.jpg",
+      "./assets/images/Advertisement_Content/Slide6.jpg",
     ],
   },
 
