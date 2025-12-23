@@ -262,26 +262,92 @@
         }
 
         // Media
+        // Media
         const mediaSection = document.getElementById("project-media");
         mediaSection.innerHTML = "";
 
+        // --- helper: image carousel ---
+        function renderImageCarousel(images) {
+          if (!Array.isArray(images) || images.length === 0) return "";
+
+          return `
+    <h4 style="margin: 0 0 10px 0;">🖼️ Project Presentation</h4>
+    <div class="pd-carousel" id="pd-carousel">
+      <button class="pd-carousel-btn" id="pd-prev" aria-label="Previous image">‹</button>
+
+      <div class="pd-carousel-frame">
+        <img id="pd-carousel-img" src="${images[0]}" alt="Project screenshot" loading="lazy" />
+      </div>
+
+      <button class="pd-carousel-btn" id="pd-next" aria-label="Next image">›</button>
+    </div>
+  `;
+        }
+
+        function initCarousel(images) {
+          if (!Array.isArray(images) || images.length === 0) return;
+
+          const imgEl = document.getElementById("pd-carousel-img");
+          const prevBtn = document.getElementById("pd-prev");
+          const nextBtn = document.getElementById("pd-next");
+
+          if (!imgEl || !prevBtn || !nextBtn) return;
+
+          let idx = 0;
+
+          const show = (i) => {
+            idx = (i + images.length) % images.length;
+            imgEl.src = images[idx];
+          };
+
+          prevBtn.onclick = () => show(idx - 1);
+          nextBtn.onclick = () => show(idx + 1);
+
+          // keyboard support
+          window.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft") show(idx - 1);
+            if (e.key === "ArrowRight") show(idx + 1);
+          });
+
+          // if any image path is missing, fallback to placeholder
+          imgEl.onerror = function () {
+            this.onerror = null;
+            this.src = "./assets/images/project-placeholder.jpg";
+          };
+        }
+
+        // 1) Images carousel (if exists)
+        if (project.images && project.images.length) {
+          mediaSection.innerHTML += renderImageCarousel(project.images);
+        }
+
+        // 2) Video
         if (project.videoUrl) {
           mediaSection.innerHTML += `
-            <h4 style="margin: 0 0 10px 0;">🎥 Project Demo</h4>
-            <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen></iframe>
-          `;
+    <h4 style="margin: 16px 0 10px 0;">🎥 Project Demo</h4>
+    <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen></iframe>
+  `;
         }
 
+        // 3) Slides
         if (project.slidesUrl) {
           mediaSection.innerHTML += `
-            <h4 style="margin: 16px 0 10px 0;">📊 Presentation Slides</h4>
-            <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen></iframe>
-          `;
+    <h4 style="margin: 16px 0 10px 0;">📊 Presentation Slides</h4>
+    <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen></iframe>
+  `;
         }
 
-        if (!project.videoUrl && !project.slidesUrl) {
+        // If nothing exists
+        if (
+          !project.images?.length &&
+          !project.videoUrl &&
+          !project.slidesUrl
+        ) {
           mediaSection.innerHTML = `<p style="opacity:0.85;">No media added for this project yet.</p>`;
         }
+
+        // init carousel after DOM elements inserted
+        initCarousel(project.images);
       });
     </script>
   </body>

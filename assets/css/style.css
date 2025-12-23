@@ -2221,3 +2221,43 @@ css for thumbnails */
   object-fit: cover; /* fills the card nicely */
   object-position: center; /* keeps it centered */
 }
+
+/* =========================
+   Project Details Carousel
+========================= */
+
+.pd-carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.pd-carousel-frame {
+  width: 100%;
+  max-width: 920px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pd-carousel-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pd-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.pd-carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}

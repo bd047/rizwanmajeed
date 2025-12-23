@@ -34,7 +34,8 @@ const projectsData = {
       "LLM classification + structured tags (JSON)",
       "Looker Studio dashboards for trends + KPIs",
     ],
-    videoUrl: "https://www.loom.com/share/YOUR-CALLDASHBOARD-LOOM-LINK",
+    videoUrl:
+      "https://drive.google.com/file/d/1U7Et5udUBDqohsMUByUN1wAW_muxNTIM/preview",
   },
 
   adClassification: {
@@ -59,6 +60,15 @@ const projectsData = {
       "Generate categories/tags (hooks, offer type, CTA, audience, etc.)",
       "Store outputs for reporting + A/B test comparisons",
       "Expose API for downstream BI / workflow automation",
+    ],
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide6.jpg",
     ],
   },
 
@@ -85,8 +95,15 @@ const projectsData = {
       "Store responses in analytics warehouse",
       "Dashboard views for cohorts/time windows",
     ],
-    slidesUrl:
-      "https://docs.google.com/presentation/d/YOUR-SURVEY-SLIDES-ID/embed",
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide6.jpg",
+    ],
   },
 
   /* ==============================
@@ -94,13 +111,13 @@ const projectsData = {
   =============================== */
 
   mentorshipMatch: {
-    title: "Medical Mentorship Matchmaking Platform",
+    title: "Basketball_Performance_Chatbot Mentorship Matchmaking Platform",
     category: "AI Agents",
     image: "./assets/images/project-mentorship-ai.jpg",
     overview:
       "AI-assisted mentor/mentee matchmaking platform using embeddings + ranking logic to generate high-quality matches and automate coordination.",
     description: `
-      A matchmaking system that connects medical mentors and mentees
+      A matchmaking system that connects Basketball_Performance_Chatbot mentors and mentees
       based on specialties, goals, and fit signals. Designed for fast onboarding,
       intelligent matching, and automated coordination workflows.
     `,
@@ -121,6 +138,14 @@ const projectsData = {
       "Embedding generation for similarity search",
       "Ranking layer (rules + AI reasoning)",
       "Match results + admin review hooks",
+    ],
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide2.png",
+      "./assets/images/Basketball_Performance_Chatbot/Slide3.png",
+      "./assets/images/Basketball_Performance_Chatbot/Slide4.png",
+      "./assets/images/Basketball_Performance_Chatbot/Slide5.png",
     ],
   },
 
@@ -146,6 +171,15 @@ const projectsData = {
       "Join/aggregate data into analytics tables",
       "Run AI summaries + hypothesis generation",
       "Produce weekly/monthly reports + insight briefs",
+    ],
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide2.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide3.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide4.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide5.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide6.jpg",
     ],
   },
 
@@ -178,6 +212,14 @@ const projectsData = {
       "Write back to CRM fields + trigger follow-ups",
       "Analytics storage for audit + reporting",
     ],
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/AnglerVision_Portfolio/Slide1.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
+    ],
   },
 
   /* ==============================
@@ -206,6 +248,18 @@ const projectsData = {
       "Caching + response formatting",
       "Auth-ready API endpoints",
       "Exportable summaries for reporting",
+    ],
+    videoUrl:
+      "https://drive.google.com/file/d/1NtNi1Eeemms35bNUqCHdGyMc7LbPV5Oq/preview",
+
+    images: [
+      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide2.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide3.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide4.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide5.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide6.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide7.jpg",
     ],
   },
 
@@ -236,7 +290,8 @@ const projectsData = {
       "Performance optimization for smooth FPS",
       "Session summaries + progression tracking",
     ],
-    videoUrl: "https://www.loom.com/share/YOUR-MIRRORVISION-LOOM-LINK",
+    videoUrl:
+      "https://drive.google.com/file/d/1ZIGxR56gtEnKb2381-JeIYsjNC5g0aO5/preview",
   },
 
   cfbSorting: {
@@ -267,7 +322,14 @@ const projectsData = {
       "Tracking + class decision logic",
       "PLC trigger for sorting lanes",
     ],
-    videoUrl: "https://www.loom.com/share/YOUR-CFB-LOOM-LINK",
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/AnglerVision_Portfolio/thumbnail.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
+    ],
   },
 
   anglerVision: {
@@ -291,6 +353,14 @@ const projectsData = {
       "Detection + class confidence thresholds",
       "Clip/segment extraction for highlights",
       "Export logs for analytics dashboards",
+    ],
+    // ✅ Add project images carousel
+    images: [
+      "./assets/images/AnglerVision_Portfolio/Slide8.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
+      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
     ],
   },
 };
