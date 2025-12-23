@@ -604,12 +604,12 @@ const projectsData = {
 
     // ✅ Add project images carousel
     images: [
+      "./assets/images/AnglerVision_Portfolio/Slide8.jpg",
       "./assets/images/AnglerVision_Portfolio/Slide1.JPG",
       "./assets/images/AnglerVision_Portfolio/Slide2.JPG",
       "./assets/images/AnglerVision_Portfolio/Slide3.JPG",
       "./assets/images/AnglerVision_Portfolio/Slide4.JPG",
       "./assets/images/AnglerVision_Portfolio/Slide5.JPG",
-      "./assets/images/AnglerVision_Portfolio/Slide8.jpg",
     ],
   },
 };
