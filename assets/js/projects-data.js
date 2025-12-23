@@ -98,11 +98,12 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/Advertisement_Content/Slide1.jpg",
-      "./assets/images/Advertisement_Content/Slide2.jpg",
-      "./assets/images/Advertisement_Content/Slide3.jpg",
-      "./assets/images/Advertisement_Content/Slide4.jpg",
-      "./assets/images/Advertisement_Content/Slide5.jpg",
+      "./assets/images/Advertisement_Content/Slide1.JPG",
+      "./assets/images/Advertisement_Content/Slide2.JPG",
+      "./assets/images/Advertisement_Content/Slide3.JPG",
+      "./assets/images/Advertisement_Content/Slide4.JPG",
+      "./assets/images/Advertisement_Content/Slide5.JPG",
+      "./assets/images/Advertisement_Content/Slide6.JPG",
     ],
   },
 
@@ -150,12 +151,11 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.jpg",
-      "./assets/images/AI_Survey_Platform_Case_Study/Slide6.jpg",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide1.JPG",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide2.JPG",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide3.JPG",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide4.JPG",
+      "./assets/images/AI_Survey_Platform_Case_Study/Slide5.JPG",
     ],
   },
 
@@ -208,11 +208,11 @@ const projectsData = {
     ],
     // ✅ Add project images carousel
     images: [
-      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide2.png",
-      "./assets/images/Basketball_Performance_Chatbot/Slide3.png",
-      "./assets/images/Basketball_Performance_Chatbot/Slide4.png",
-      "./assets/images/Basketball_Performance_Chatbot/Slide5.png",
+      "./assets/images/medical/Slide1.jpg",
+      "./assets/images/medical/Slide2.png",
+      "./assets/images/medical/Slide3.png",
+      "./assets/images/medical/Slide4.png",
+      "./assets/images/medical/Slide5.png",
     ],
   },
 
@@ -252,12 +252,12 @@ const projectsData = {
 
     // ✅ Add project images carousel
     images: [
-      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide2.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide3.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide4.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide5.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide6.jpg",
+      "./assets/images/Influencer_Market_Intelligence/Slide1.JPG",
+      "./assets/images/Influencer_Market_Intelligence/Slide2.JPG",
+      "./assets/images/Influencer_Market_Intelligence/Slide3.JPG",
+      "./assets/images/Influencer_Market_Intelligence/Slide4.JPG",
+      "./assets/images/Influencer_Market_Intelligence/Slide5.JPG",
+      "./assets/images/Influencer_Market_Intelligence/Slide6.JPG",
     ],
   },
 
@@ -302,11 +302,11 @@ const projectsData = {
 
     // ✅ Add project images carousel
     images: [
-      "./assets/images/AnglerVision_Portfolio/Slide1.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
+      "./assets/images/The Compliance Challenge/Slide1.JPG",
+      "./assets/images/The Compliance Challenge/Slide2.JPG",
+      "./assets/images/The Compliance Challenge/Slide3.JPG",
+      "./assets/images/The Compliance Challenge/Slide4.JPG",
+      "./assets/images/The Compliance Challenge/Slide5.JPG",
     ],
   },
 
@@ -354,7 +354,15 @@ const projectsData = {
       "Semantic RAG via Milvus for basketball knowledge queries",
       "Guardrails + debug tracing for safe, inspectable outputs",
     ],
-
+    images: [
+      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
+      "./assets/images/Basketball_Performance_Chatbot/Slide2.JPG",
+      "./assets/images/Basketball_Performance_Chatbot/Slide3.JPG",
+      "./assets/images/Basketball_Performance_Chatbot/Slide4.JPG",
+      "./assets/images/Basketball_Performance_Chatbot/Slide5.JPG",
+      "./assets/images/Basketball_Performance_Chatbot/Slide6.JPG",
+      "./assets/images/Basketball_Performance_Chatbot/Slide7.jpg",
+    ],
     videoUrl:
       "https://drive.google.com/file/d/1NtNi1Eeemms35bNUqCHdGyMc7LbPV5Oq/preview",
     // (you said exclude basketball from carousel earlier, so remove images if you want)
@@ -403,12 +411,12 @@ const projectsData = {
     ],
 
     images: [
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide1.jpg",
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide2.jpg",
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide3.jpg",
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide4.jpg",
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide5.jpg",
-      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide6.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide1.JPG",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide2.JPG",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide3.JPG",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide4.JPG",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide5.JPG",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide6.JPG",
     ],
     links: {
       "Live Site": "https://visibilityreport.ai",
@@ -451,11 +459,10 @@ const projectsData = {
     ],
 
     images: [
-      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide1.jpg",
-      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide2.jpg",
-      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide3.jpg",
-
-      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide4.jpg",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide1.JPG",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide2.JPG",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide3.JPG",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide4.JPG",
     ],
   },
 
@@ -505,6 +512,14 @@ const projectsData = {
       "Live Site":
         "https://apps.apple.com/nl/app/mirror-vision-golf-coaching/id1381051713?l=en-GB",
     },
+    images: [
+      "./assets/images/MirrorVision_CaseStudy/Slide1.jpg",
+      "./assets/images/MirrorVision_CaseStudy/Slide2.JPG",
+      "./assets/images/MirrorVision_CaseStudy/Slide3.JPG",
+      "./assets/images/MirrorVision_CaseStudy/Slide4.JPG",
+      "./assets/images/MirrorVision_CaseStudy/Slide5.JPG",
+      "./assets/images/MirrorVision_CaseStudy/Slide6.JPG",
+    ],
     videoUrl:
       "https://drive.google.com/file/d/1ZIGxR56gtEnKb2381-JeIYsjNC5g0aO5/preview",
   },
@@ -546,11 +561,11 @@ const projectsData = {
 
     // ✅ Add project images carousel
     images: [
-      "./assets/images/AnglerVision_Portfolio/thumbnail.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
+      "./assets/images/LEGO_Sorting_System_portfolio/thumbnail.JPG",
+      "./assets/images/LEGO_Sorting_System_portfolio/Slide2.JPG",
+      "./assets/images/LEGO_Sorting_System_portfolio/Slide3.JPG",
+      "./assets/images/LEGO_Sorting_System_portfolio/Slide4.JPG",
+      "./assets/images/LEGO_Sorting_System_portfolio/Slide5.JPG",
     ],
   },
 
@@ -589,11 +604,12 @@ const projectsData = {
 
     // ✅ Add project images carousel
     images: [
+      "./assets/images/AnglerVision_Portfolio/Slide1.JPG",
+      "./assets/images/AnglerVision_Portfolio/Slide2.JPG",
+      "./assets/images/AnglerVision_Portfolio/Slide3.JPG",
+      "./assets/images/AnglerVision_Portfolio/Slide4.JPG",
+      "./assets/images/AnglerVision_Portfolio/Slide5.JPG",
       "./assets/images/AnglerVision_Portfolio/Slide8.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide2.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide3.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide4.jpg",
-      "./assets/images/AnglerVision_Portfolio/Slide5.jpg",
     ],
   },
 };
