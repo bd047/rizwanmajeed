@@ -187,6 +187,11 @@
             a.rel = "noopener noreferrer";
             a.className = "pd-btn";
             a.textContent = label;
+
+            if (label.trim().toLowerCase() === "live site") {
+              a.classList.add("pd-btn-live");
+            }
+
             actions.appendChild(a);
           });
         };

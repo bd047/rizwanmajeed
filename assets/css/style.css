@@ -2294,3 +2294,19 @@ css for thumbnails */
   font-size: 22px;
   cursor: pointer;
 }
+
+/* ==========
+
+Live button 
+
+============ */
+
+.pd-btn-live {
+  background: hsl(302, 100%, 72%);
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.pd-btn-live:hover {
+  filter: brightness(0.95);
+}

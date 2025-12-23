@@ -9,18 +9,26 @@ const projectsData = {
     image: "./assets/images/project-call-dashboard.jpg",
     overview:
       "End-to-end call intelligence system for dental marketing teams: transcribe calls, classify intent, auto-tag outcomes, and visualize KPIs in dashboards.",
+
     description: `
-      An AI-powered call analytics platform that classifies, summarizes,
-      and visualizes inbound call data for dental marketing agencies.
-      Built using Deepgram for transcription, GPT-4 for intent analysis,
-      and Looker Studio for analytics. Integrated through AWS Lambda and BigQuery.
-    `,
+    Built a production-ready call intelligence pipeline that automatically classifies and summarizes inbound calls and turns them into searchable analytics dashboards for multi-company reporting. The system runs daily using Amazon EventBridge → AWS Lambda to fetch call metadata from the CallRail API (call ID, time, source, company/customer details). Each call is queued into Amazon SQS to enable asynchronous, scalable processing and to safely handle CallRail rate limits using retry logic + visibility timeouts.
+<br>
+<br>  For each queued call, I generate the audio transcript using Deepgram, normalize it into a structured input, and send it to OpenAI GPT-4 for summary generation and classification into predefined service/intent tags (with rationale). The pipeline also includes de-duplication checks to avoid reprocessing calls that were already tagged. Those AI-generated tags are then written back into the corresponding CallRail call record, creating a closed-loop workflow where the CRM stays updated automatically.
+<br>
+  <br>Finally, I persist the complete processed output (metadata, transcript, summary, tags, rationale) into Google BigQuery for auditing and trend analysis, and connect BigQuery to Looker Studio to deliver company-specific dashboards showing call volume, lead quality, service demand, and campaign/source performance over time.
+`,
+
     technologies: [
-      "Deepgram",
+      "CallRail API",
+      "Deepgram (Transcription)",
       "OpenAI GPT-4",
       "AWS Lambda",
+      "Amazon EventBridge",
+      "Amazon SQS",
+      "Amazon API Gateway",
       "Google BigQuery",
       "Looker Studio",
+      "Python (Boto3)",
     ],
     features: [
       "Automatic transcription + diarization-ready pipeline",
@@ -29,10 +37,11 @@ const projectsData = {
       "Dashboards for campaign/call-source performance",
     ],
     functionalities: [
-      "Ingest calls + metadata (source, campaign, caller)",
-      "Transcribe → normalize → store in BigQuery",
-      "LLM classification + structured tags (JSON)",
-      "Looker Studio dashboards for trends + KPIs",
+      "Scheduled CallRail ingestion: Daily EventBridge → Lambda pulls call metadata + IDs and prepares calls for processing.",
+      "Async processing + rate-limit safety: Calls are queued in SQS to decouple fetch/process, with retry + visibility timeout handling throttling cleanly.",
+      "Transcription pipeline: Generates and normalizes audio transcripts via Deepgram (diarization-ready structure).",
+      "LLM classification + summaries: GPT-4 produces structured intent/service tags, lead-quality labeling, and call summaries (with rationale/key points).",
+      "Closed-loop analytics: Writes tags back to CallRail, stores full outputs in BigQuery, and powers Looker Studio dashboards for campaign/call-source trends.",
     ],
     videoUrl:
       "https://drive.google.com/file/d/1U7Et5udUBDqohsMUByUN1wAW_muxNTIM/preview",
@@ -44,16 +53,36 @@ const projectsData = {
     image: "./assets/images/project-ad-classification.jpg",
     overview:
       "System that classifies ad creatives into standardized content categories to enable creative testing, reporting automation, and performance insights.",
+
     description: `
-      AI-based system that classifies marketing creatives (images, videos, or copy)
-      into advertising content categories. Helps automate campaign performance
-      analysis and creative testing workflows.
-    `,
-    technologies: ["GPT-4", "TensorFlow", "FastAPI", "AWS S3"],
+  Built a multi-modal advertisement content classification system that distinguishes storytelling-based ad segments from live event coverage by combining video understanding with audio/transcript intelligence. I started by temporally annotating video segments and structuring a training/validation dataset for both frame-level and sequence-level learning.
+<br>
+<br>
+  On the vision side, I trained a YOLOv8-based classifier to label frames as storytelling vs coverage, then extended it to detect stadium-view sequences for stronger spatio-temporal signals across a full clip. In parallel, I transcribed audio using Whisper and used an LLM with prompt-engineering to classify transcript narrative style into the same categories. I aggregated visual ratios (e.g., % storytelling frames) and audio predictions into a single feature set and trained a lightweight meta-classifier (scikit-learn) to produce a final video-level decision.
+<br><br>
+  I packaged the end-to-end inference pipeline behind APIs and delivered a React frontend where users can upload videos/images and see results in real time. The system was deployed serverlessly on AWS Lambda with S3 storage and API Gateway, optimized for Lambda constraints via quantization and container-based deployment (Docker images) to keep performance scalable and cost-efficient.
+`,
+    technologies: [
+      "Python",
+      "YOLOv8",
+      "Whisper",
+      "OpenAI (LLM)",
+      "scikit-learn",
+      "OpenCV",
+      "FFmpeg",
+      "Pandas",
+      "React",
+      "AWS Lambda",
+      "AWS S3",
+      "Amazon API Gateway",
+      "Docker",
+    ],
     features: [
-      "Creative content categorization (multi-format)",
-      "Performance analytics-ready labels",
-      "Integration-ready REST API endpoints",
+      "Temporal annotation + dataset structuring for video segments",
+      "Frame + sequence classification (storytelling vs coverage)",
+      "Whisper transcription + LLM transcript classification",
+      "Multi-modal feature aggregation + meta ML video-level decision",
+      "React upload UI + serverless inference (S3 + API Gateway + Lambda)",
     ],
     functionalities: [
       "Upload creative (image/video/copy) + metadata",
@@ -79,15 +108,34 @@ const projectsData = {
     overview:
       "Adaptive survey platform that generates personalized questions with AI and turns responses into actionable sentiment + insight dashboards.",
     description: `
-      A dynamic AI-powered survey system that generates personalized questions
-      using GPT and visualizes aggregated feedback analytics. Used for
-      customer sentiment tracking and experience insights.
-    `,
-    technologies: ["React", "FastAPI", "GPT-4", "BigQuery", "Looker Studio"],
+  Built an AI-powered survey platform that personalizes questions per customer to make feedback collection faster, more relevant, and easier to complete. Instead of sending long static forms, the system dynamically selects and adapts questions using customer profile, journey context, and past feedback so each passenger only sees what matters.
+<br>
+<br>
+  I delivered a manager-facing dashboard to create/publish surveys, monitor completions in real time, and review results with both the customer’s original wording and the platform’s interpreted response for clearer reporting. After the initial release, I expanded the product with save-and-resume, smarter skip logic based on earlier answers, custom greetings (name-based), support for additional languages beyond English/Spanish, and multiple input modes (type, click, or speak).
+<br>
+<br>
+  To meet operational and privacy requirements, I migrated the solution from cloud-only to a self-hosted/on-prem deployment, added new customer data fields, introduced branded email invitations, and launched phone-based surveys where an AI voice assistant calls customers and captures responses end-to-end—ready for trade-show demos and ongoing production use.
+`,
+    technologies: [
+      "Python",
+      "FastAPI",
+      "React",
+      "Next.js",
+      "MongoDB",
+      "PostgreSQL",
+      "Airtable",
+      "OpenAI GPT-4",
+      "Embeddings",
+      "Vercel",
+      "Render",
+      "AWS Lambda",
+    ],
     features: [
-      "Adaptive question generation (branching logic)",
-      "Real-time response visualization",
-      "Automated sentiment summaries and themes",
+      "Adaptive questions (branching + skip logic)",
+      "Save & resume surveys",
+      "Web + email + voice delivery",
+      "Live completion + response dashboard",
+      "GPT-4 sentiment/topics + theme clustering",
     ],
     functionalities: [
       "Generate next question based on prior answers",
@@ -111,27 +159,41 @@ const projectsData = {
   =============================== */
 
   mentorshipMatch: {
-    title: "Basketball_Performance_Chatbot Mentorship Matchmaking Platform",
+    title: "Medical Mentorship Matchmaking Platform",
     category: "AI Agents",
     image: "./assets/images/project-mentorship-ai.jpg",
     overview:
       "AI-assisted mentor/mentee matchmaking platform using embeddings + ranking logic to generate high-quality matches and automate coordination.",
     description: `
-      A matchmaking system that connects Basketball_Performance_Chatbot mentors and mentees
-      based on specialties, goals, and fit signals. Designed for fast onboarding,
-      intelligent matching, and automated coordination workflows.
-    `,
+  Built a production-ready backend for a private medical mentorship network that matches students with the most relevant mentors in seconds instead of weeks. The system replaces manual spreadsheet-based matching with an AI-driven recommendation engine powered by semantic vector search.
+<br>
+<br>
+  I designed a serverless AWS architecture using Lambda for compute, DynamoDB for profile storage, API Gateway for versioned REST endpoints (/addUser, /getUser, /recommend), and EventBridge to run scheduled refresh jobs. For matching, I generated OpenAI embeddings from user-stated goals, challenges, and strengths, stored vectors in Pinecone (namespaces per cohort/segment), and combined semantic similarity with rule-based weighting (specialty, study year, availability) to improve relevance. Recommendations are returned as top matches with explainable rationale by storing the top contributing attributes.
+<br><br>
+  The platform was shipped in 4 weeks (POC + production), achieved sub-second matching latency (~590ms avg at MVP scale), and kept infrastructure costs low using pay-per-use serverless services—while remaining extensible for future frontend, chat, and analytics modules without re-architecture.
+`,
     technologies: [
+      "Python",
       "GPT-4",
       "LangChain/LangGraph",
       "FastAPI",
       "Supabase/PostgreSQL",
       "Vector Search",
+      "AWS Lambda",
+      "Amazon DynamoDB",
+      "Amazon EventBridge",
+      "Amazon API Gateway",
+      "Pinecone",
+      "OpenAI Embeddings",
+      "Terraform",
+      "Node.js",
     ],
     features: [
-      "AI-driven match recommendations",
-      "Structured mentor/mentee profiles",
-      "Automated coordination workflows (notifications, follow-ups)",
+      "Profile ingestion APIs (add/get users) with DynamoDB storage",
+      "Vector-based matching using OpenAI embeddings + Pinecone search",
+      "Domain-weighted ranking (specialty, year, availability) for relevance",
+      "Scheduled auto-refresh of recommendations (EventBridge cron)",
+      "Explainable results (stored attribute contributions + rationale)",
     ],
     functionalities: [
       "Profile ingestion → clean + normalize",
@@ -156,22 +218,33 @@ const projectsData = {
     overview:
       "Influencer + competitor intelligence engine that consolidates signals into structured datasets and generates GPT-powered insights for marketing teams.",
     description: `
-      An AI-driven analytics platform that aggregates influencer campaigns,
-      analyzes performance metrics, and generates GPT-powered insights for
-      attribution, reporting, and competitor tracking.
-    `,
-    technologies: ["Python", "GPT-4", "BigQuery", "LangChain", "APIs/Webhooks"],
+  Built an AI-powered influencer and market intelligence system that automates weekly and monthly content research for media strategy teams. Instead of manually tracking multiple platforms and sources, the solution runs as three coordinated engines: influencer activity analysis, market news briefing, and keyword opportunity tracking. Each engine collects relevant data on a schedule (daily updates, weekly summaries, monthly rollups), then converts it into structured insights that are immediately usable for planning.
+<br><br>
+  The system aggregates influencer posts and engagement patterns, summarizes market/industry articles into weekly one-page briefs, and highlights trending keywords/hashtags with growth potential. I also extended the platform to ingest expert insights via RSS feeds and Gmail newsletters, ensuring important signals aren’t missed. To improve scanability, the reports include visual summaries such as word clouds and topic highlights, plus reliability features like error handling and alerts so reports are consistently delivered.
+<br><br>
+  All outputs are delivered in Google Workspace Google Sheets for sortable/filterable datasets and Google Docs for decision-ready briefs so stakeholders can review insights without learning new tools, enabling faster, more consistent, evidence-based content planning.
+`,
+    technologies: [
+      "Python",
+      "GPT-4",
+      "BigQuery",
+      "LangChain",
+      "APIs/Webhooks",
+      "OpenAI (LLMs)",
+      "Google Sheets API",
+      "Google Docs API",
+      "Gmail API",
+      "RSS",
+      "Cron Scheduling",
+    ],
     features: [
-      "Influencer attribution modeling",
-      "Automated campaign tracking + reporting",
-      "Insight generation (what worked, why, what to test next)",
+      "Influencer post/activity tracking with monthly rollup reports",
+      "Weekly market news briefs with LLM summarization",
+      "Trending keyword/hashtag tracking with growth signals",
+      "RSS + Gmail newsletter ingestion for expert insights",
+      "Google Sheets/Docs delivery with scheduling + alerts",
     ],
-    functionalities: [
-      "Ingest campaign schedules + performance metrics",
-      "Join/aggregate data into analytics tables",
-      "Run AI summaries + hypothesis generation",
-      "Produce weekly/monthly reports + insight briefs",
-    ],
+
     // ✅ Add project images carousel
     images: [
       "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
@@ -190,28 +263,38 @@ const projectsData = {
     overview:
       "HIPAA-conscious CRM automation agent to summarize calls, update records, and generate patient follow-ups while keeping access controlled and auditable.",
     description: `
-      A CRM automation agent that assists dental clinics by automating follow-ups,
-      appointment workflows, and call summaries. Integrated with call and CRM data
-      sources and built with privacy-first patterns for regulated environments.
-    `,
+  Re-engineered an existing AI call classification platform to meet HIPAA compliance requirements for enterprise healthcare adoption. The original system relied on non-HIPAA-eligible AI services, creating compliance risk for patient-related call processing and limiting the client’s ability to sell into regulated healthcare markets.
+<br><br>
+  I migrated all LLM processing into a HIPAA-eligible environment using AWS Bedrock and re-deployed the platform inside a private, isolated cloud setup with strict access controls. The infrastructure was hardened using role-based permissions (IAM), encryption controls (KMS), and network isolation (VPC) to minimize exposure of sensitive data. To support compliance validation, I implemented audit-ready monitoring and traceability through centralized logging and activity tracking (CloudWatch + CloudTrail), providing full visibility into system and user actions.
+<br><br>
+  The result was a secure, compliant, and scalable foundation that maintained classification accuracy and performance while enabling the client to confidently pursue enterprise healthcare partnerships under an AWS BAA-backed compliance posture.
+`,
     technologies: [
+      "Python",
       "LangGraph",
       "GPT-4",
       "Zapier/n8n",
+      "AWS Bedrock",
+      "AWS Lambda",
+      "Amazon S3",
+      "Amazon API Gateway",
+      "AWS IAM",
+      "AWS KMS",
+      "Amazon CloudWatch",
+      "AWS CloudTrail",
+      "AWS VPC",
+
       "CallRail API",
       "Google BigQuery",
     ],
     features: [
-      "AI agent workflows for clinic operations",
-      "Automated CRM record updates",
-      "Email/SMS follow-up generation + templating",
+      "HIPAA-eligible LLM processing via AWS Bedrock",
+      "Private deployment with RBAC + network isolation (VPC/IAM)",
+      "Encryption at rest/in transit using KMS-managed controls",
+      "Centralized audit logging + monitoring (CloudTrail/CloudWatch)",
+      "Scalable architecture ready for enterprise healthcare growth",
     ],
-    functionalities: [
-      "Pull call + lead events from CallRail/CRM",
-      "Generate structured summary + disposition",
-      "Write back to CRM fields + trigger follow-ups",
-      "Analytics storage for audit + reporting",
-    ],
+
     // ✅ Add project images carousel
     images: [
       "./assets/images/AnglerVision_Portfolio/Slide1.jpg",
@@ -237,22 +320,36 @@ const projectsData = {
     overview:
       "LangGraph-powered chatbot that answers performance questions over a stats database and returns structured insights and visual-ready outputs.",
     description: `
-      A LangGraph-based AI chatbot that connects with a basketball performance
-      database to analyze player stats, generate reports, and respond to
-      natural language queries with structured insights.
-    `,
-    technologies: ["LangGraph", "FastAPI", "React", "PostgreSQL"],
+  Built a LangGraph-powered basketball performance analysis chatbot that answers natural-language questions with real metrics, real-time stats, and coaching-grade explanations. The system uses a guardrailed agent workflow: every query first passes through NeMo Guardrails for safety/relevance, then a LangGraph router sends it to the best processing path based on intent.
+<br> <br>
+  For player-specific metric questions, the agent refines ambiguous terms (via Tavily when needed), generates a pseudo-algorithm + required fields, pulls shot-level data from MinIO, and uses a code-interpreter style Amazon Bedrock Agent to compute results (averages, ranges, comparisons, best/worst segments). For aggregate performance questions, it analyzes streaming stats from Kafka (with KSQLdb/Pandas pipelines). For broader “why/how” basketball questions, it runs a RAG flow using Milvus to retrieve contextual knowledge before GPT-4o synthesizes a concise, actionable answer.
+<br><br>
+  The platform also supports session-aware interactions (PostgreSQL) and offers an optional debug view so coaches/athletes can inspect intermediate steps and tool outputs.
+`,
+    technologies: [
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "OpenAI GPT-4o",
+      "Amazon Bedrock",
+      "NeMo Guardrails",
+      "PostgreSQL",
+      "MinIO",
+      "Kafka",
+      "Milvus",
+      "Pandas",
+      "boto3",
+      "KSQLdb",
+      "Tavily",
+    ],
     features: [
-      "Database-integrated Q&A",
-      "Advanced stat filtering + comparisons",
-      "Report-style responses for coaches/analysts",
+      "Intent routing across Metrics / Statistics / RAG paths",
+      "Shot-metric analysis from MinIO using Bedrock code interpreter",
+      "Real-time aggregated stats analysis from Kafka streams",
+      "Semantic RAG via Milvus for basketball knowledge queries",
+      "Guardrails + debug tracing for safe, inspectable outputs",
     ],
-    functionalities: [
-      "Natural language query → SQL/Tool calls",
-      "Caching + response formatting",
-      "Auth-ready API endpoints",
-      "Exportable summaries for reporting",
-    ],
+
     videoUrl:
       "https://drive.google.com/file/d/1NtNi1Eeemms35bNUqCHdGyMc7LbPV5Oq/preview",
     // (you said exclude basketball from carousel earlier, so remove images if you want)
@@ -266,38 +363,40 @@ const projectsData = {
     overview:
       "Self-serve AI visibility reporting platform that checks how local service businesses appear across GPT/Gemini/Claude/Perplexity/Grok, with scheduling via n8n and report delivery to Google Sheets.",
     description: `
-      <p>
-        Built an end-to-end AI visibility reporting system for PlumberSEO to measure how plumbing/HVAC/electrical businesses are represented across major AI models.
-        Includes a self-serve website + admin dashboard for query customization, client management, and automated scheduled reporting.
-      </p>
- 
-    `,
+  Built a full AI visibility reporting platform for PlumberSEO that shows local service businesses (plumbers/HVAC/electricians/restoration) how they appear across major AI assistants. The system provides both a self-serve public site (visibilityreport.ai) and an admin dashboard for managing hundreds of clients, queries, and automation settings.
+<br><br>
+  Architected the backend as two AWS Lambda microservices (Flask + DynamoDB): one service generates reports and scoring by calling multiple AI platforms (GPT, Gemini, Claude, Perplexity, Grok) with predefined or client-specific queries, then extracts “visible/not visible”, mention rank, and an overall visibility score. The second service powers admin controls (client CRUD, query sets, scheduler flags) and exposes endpoints to update automation settings.
+<br><br>
+  Automated scheduled reporting with n8n running on AWS EC2: a scheduler triggers report generation, formats results, writes them into a per-client Google Sheet (new tab per run for history), and stores the Sheet link back in DynamoDB so it’s accessible from the admin UI. Added a 15-minute OTP email verification step to prevent abuse and ensure authentic report requests.
+`,
     technologies: [
       "React",
       "TypeScript",
-      "Flask (Python)",
+      "Tailwind CSS",
+      "Axios",
+      "Flask",
+      "Python",
       "AWS Lambda",
-      "API Gateway",
-      "DynamoDB",
+      "Amazon API Gateway",
+      "Amazon DynamoDB",
       "AWS Amplify",
-      "n8n (AWS EC2)",
+      "n8n",
+      "AWS EC2",
       "Google Sheets API",
-      "OpenAI / Gemini / Claude / Perplexity / Grok APIs",
+      "OpenAI API",
+      "Gemini API",
+      "Claude API",
+      "Perplexity API",
+      "Grok API",
     ],
     features: [
-      "Self-serve report generation (website)",
-      "Admin dashboard (clients + queries + schedules)",
-      "Multi-model visibility & ranking extraction",
-      "Automated scheduled reports via n8n",
-      "Historical tracking in Google Sheets",
+      "Self-serve AI visibility reports across 5 LLM platforms",
+      "Visibility + rank extraction with overall scoring per query/client",
+      "Admin dashboard for client + query management (CRUD + customization)",
+      "Scheduled automation via n8n with Google Sheets (new tab per run)",
+      "OTP email verification + per-client scheduler toggle (scheduler_enabled)",
     ],
-    functionalities: [
-      "OTP/email verification before report generation",
-      "Run queries across multiple AI providers",
-      "Extract mentions + rank position + visibility flags",
-      "Compute AI visibility score",
-      "Toggle scheduling and update frequency via admin controls",
-    ],
+
     images: [
       "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide1.jpg",
       "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide2.jpg",
@@ -309,7 +408,6 @@ const projectsData = {
     links: {
       "Live Site": "https://visibilityreport.ai",
     },
-    // videoUrl: "https://www.loom.com/embed/YOUR_LOOM_ID",
   },
 
   // ✅ NEW PROJECT #2 (Web Development)
@@ -320,16 +418,18 @@ const projectsData = {
     overview:
       "Cloud-native face registration + verification web app using AWS Rekognition with a serverless Lambda backend and DynamoDB for metadata.",
     description: `
-      <p>
-        Built a production-ready facial recognition web app for user onboarding and identity verification.
-        Users can register a face (IndexFaces) and verify identity (SearchFacesByImage) with similarity scoring.
-      </p>
-
-       
-    `,
+  Built a cloud-native facial recognition web application for fast user onboarding and identity verification using a fully serverless AWS architecture. The frontend was developed in React with a responsive UI and real-time camera capture via WebRTC, allowing users to register or verify their identity directly from desktop or mobile browsers. The UI communicates with backend REST endpoints to upload images and receive verification results instantly.
+<br><br>
+  On the backend, I implemented AWS Lambda functions (Python/Node.js) to handle request validation, image encoding, and orchestration of the recognition workflow. Amazon Rekognition powers the core face engine: IndexFaces is used for registration and feature indexing, while SearchFacesByImage performs one-to-many matching and returns similarity scores for verification. I designed a DynamoDB schema to store face metadata (FaceId, user identifiers, timestamps, Rekognition attributes) optimized for scalable lookups and clean identity management.
+<br><br>
+  For production readiness, I added monitoring and observability via CloudWatch (Lambda + Rekognition usage), enforced secure access through IAM policies, and deployed the web app with AWS Amplify CI/CD for repeatable releases and rollback-safe updates. The result is a low-latency, cost-efficient identity verification foundation that can extend into attendance, access control, or API-driven enterprise integrations.
+`,
     technologies: [
       "React",
+      "Python",
+      "Node.js",
       "WebRTC",
+      "Tailwind CSS",
       "AWS Lambda",
       "Amazon Rekognition",
       "DynamoDB",
@@ -338,18 +438,13 @@ const projectsData = {
       "IAM",
     ],
     features: [
-      "Real-time camera capture + upload",
-      "Face registration + similarity scoring",
-      "Serverless scaling + monitoring",
-      "Production-ready API-driven flow",
+      "WebRTC-based camera capture + image upload flow",
+      "Face registration (IndexFaces) with metadata storage in DynamoDB",
+      "Face verification (SearchFacesByImage) with similarity scoring",
+      "Serverless processing via Lambda with JSON response normalization",
+      "Monitoring + secure deployment (CloudWatch, IAM, Amplify CI/CD)",
     ],
-    functionalities: [
-      "Capture image → send to backend",
-      "IndexFaces for enrollment",
-      "SearchFacesByImage for verification",
-      "Store face metadata in DynamoDB",
-      "Return similarity score + status to UI",
-    ],
+
     images: [
       "./assets/images/AWS_Facial_Recognition_Case_Study/Slide1.jpg",
       "./assets/images/AWS_Facial_Recognition_Case_Study/Slide2.jpg",
@@ -369,22 +464,42 @@ const projectsData = {
     overview:
       "On-device pose recognition app for form analysis and feedback with privacy-first inference and real-time performance constraints.",
     description: `
-      An AI-powered fitness coaching app that uses real-time pose recognition
-      to analyze user form and provide feedback. Built with on-device inference
-      for low latency and privacy.
-    `,
-    technologies: ["CoreML", "Swift", "TensorFlow", "Pose Estimation"],
+  Led a full rebuild of the Mirror Vision iOS golf coaching application to improve UX, eliminate streaming lag, and introduce advanced AI and Pro features. The app connects an iPhone (camera) with an iPad (display) to deliver real-time swing playback and analysis, so the redevelopment focused heavily on stability, low latency, and an intuitive coaching workflow.
+<br><br>
+  I redesigned the UI/UX in Figma and implemented a cleaner iOS experience with landscape support, guiding grid overlays, replay tools, drawing controls, and gesture-based actions (save/discard swings). For device connectivity and real-time streaming, I improved pairing and reconnection reliability using Bluetooth/Wi-Fi flows and Apple’s Multipeer Connectivity framework to keep sessions stable even under high frame-rate recording.
+<br><br>
+  On the AI side, I validated model approaches with YOLOv8 keypoints + LSTM during early experimentation, then trained a swing detection model using CreateML, converted it to CoreML, and integrated it with Apple Vision for on-device, real-time swing event detection. I also delivered multi-camera recording for Pro users, including synchronized playback and side-by-side comparisons. Finally, I built backend support for authentication, subscriptions, payments, and video syncing with secure data handling, and shipped the rebuilt app through TestFlight to a successful App Store launch.
+`,
+    technologies: [
+      "Swift",
+      "SwiftUI",
+      "iOS",
+      "Figma",
+      "CoreML",
+      "CreateML",
+      "Apple Vision",
+      "Multipeer Connectivity",
+      "Bluetooth",
+      "Wi-Fi",
+      "YOLOv8",
+      "LSTM",
+      "Backend APIs",
+      "Cloud Storage",
+      "TestFlight",
+      "Pose Estimation",
+      "App Store Deployment",
+    ],
     features: [
-      "Real-time pose tracking + feedback",
-      "On-device inference for privacy",
-      "iOS-optimized UI/UX",
+      "iPhone ↔ iPad pairing with low-latency streaming + auto-reconnect",
+      "Clean coaching UI (grid overlays, landscape mode, replay + drawing tools)",
+      "On-device swing detection using CoreML/CreateML + Vision",
+      "Pro multi-camera capture with synced playback + side-by-side comparison",
+      "Subscriptions + cloud video syncing backed by a secure backend",
     ],
-    functionalities: [
-      "Pose keypoints extraction per frame",
-      "Rule-based scoring + feedback prompts",
-      "Performance optimization for smooth FPS",
-      "Session summaries + progression tracking",
-    ],
+    links: {
+      "Live Site":
+        "https://apps.apple.com/nl/app/mirror-vision-golf-coaching/id1381051713?l=en-GB",
+    },
     videoUrl:
       "https://drive.google.com/file/d/1ZIGxR56gtEnKb2381-JeIYsjNC5g0aO5/preview",
   },
@@ -396,27 +511,34 @@ const projectsData = {
     overview:
       "Real-time industrial sorting pipeline using YOLO + DeepStream on Jetson with PLC integration for automated physical actuation.",
     description: `
-      Real-time LEGO sorting system using YOLOv8 and DeepStream,
-      deployed on NVIDIA Jetson Orin NX with PLC integration for industrial use.
-    `,
+  Built Robert V1 a production-grade, real-time LEGO sorting prototype for Canada First Bricks that detects, classifies, and routes parts entirely on the edge using NVIDIA Jetson Orin NX. The goal was to replace expensive, error-prone manual sorting with an embedded system capable of identifying hundreds of visually similar LEGO parts at industrial throughput.
+<br><br>
+  The vision stack uses a custom YOLOv8 detector to localize parts in top-down camera frames, followed by a dedicated YOLOv8-based classifier that identifies exact LEGO part numbers across 300+ types. A separate deep learning color classifier improves robustness beyond classical OpenCV methods. The pipeline runs in a multi-model DeepStream + GStreamer architecture with TensorRT acceleration to maintain super real-time performance (<100ms end-to-end latency) while sustaining ~3600 parts/hour.
+<br><br>
+  To drive physical sorting, I implemented lightweight tracking and “trigger-point” decision freezing so each part is classified once and routed deterministically. Commands are sent to an industrial PLC via Modbus RTU over serial, enabling reliable diverter control with >99.9% command success. I also built an automated dataset expansion workflow that reduces manual labeling by leveraging upstream detection outputs to accelerate onboarding new LEGO part types.
+`,
     technologies: [
+      "Python",
+      "C++",
       "YOLOv8",
-      "DeepStream",
+      "PyTorch",
       "TensorRT",
-      "Jetson Orin NX",
+      "NVIDIA DeepStream",
+      "GStreamer",
       "OpenCV",
+      "NVIDIA Jetson Orin NX",
+      "Raspberry Pi HQ Camera",
+      "Modbus RTU",
+      "PLC / GPIO",
+      "Bash",
     ],
     features: [
-      "Real-time detection + classification",
-      "Edge-native deployment (low latency)",
-      "PLC-controlled sorting integration",
+      "Real-time detection + classification of 300+ LEGO part types on Jetson",
+      "TensorRT-accelerated DeepStream pipeline (multi-model, low latency)",
+      "Deep learning color classification for consistent variant handling",
+      "Object tracking + trigger-point decision freezing for deterministic routing",
     ],
-    functionalities: [
-      "Camera ingest → pre-processing",
-      "DeepStream pipeline with TensorRT engine",
-      "Tracking + class decision logic",
-      "PLC trigger for sorting lanes",
-    ],
+
     // ✅ Add project images carousel
     images: [
       "./assets/images/AnglerVision_Portfolio/thumbnail.jpg",
@@ -434,21 +556,32 @@ const projectsData = {
     overview:
       "Fish detection + classification optimized for underwater footage and edge inference, designed for sports fishing analytics and scalable deployments.",
     description: `
-      Real-time fish detection and classification system for sports fishing.
-      Optimized for underwater cameras and Jetson-based edge devices.
-    `,
-    technologies: ["YOLOv8", "DeepStream", "OpenCV", "Jetson Orin Nano"],
+  Improved and stabilized AnglerVision’s Aqua edge application for sports fishing by reducing false positives, rebuilding the video pipeline for multi-camera scalability, and eliminating crash-causing memory leaks. The existing model frequently misclassified non-fish motion/disturbances, the GStreamer pipeline was rigid and hard to extend, camera switching/recording triggered memory leaks, and the default Qt playback layer was unreliable. The system also lacked structured storage for detection events, limiting analysis and iteration.
+<br><br>
+  I upgraded the vision model to YOLOv8 and introduced dredge-specific classes plus tracking to cut false positives by ~70%. On the media side, I redesigned the GStreamer architecture to dynamically handle multiple RTSP streams, enabling seamless multi-camera support and robust recording without brittle, one-off pipelines. I overhauled memory management to prevent leaks during camera switching and long-running sessions, and implemented a custom GStreamer-based media player to replace unstable playback behavior.
+<br><br>
+  Finally, I integrated a lightweight SQLite layer to log every detection event for downstream analytics and model iteration. The result is a low-latency, real-time, edge-deployed system on NVIDIA AGX Orin with significantly improved accuracy, stability, and scalability.
+`,
+    technologies: [
+      "Python",
+      "C++",
+      "YOLOv8",
+      "TensorRT",
+      "NVIDIA DeepStream",
+      "GStreamer",
+      "Qt",
+      "SQLite",
+      "RTSP",
+      "NVIDIA AGX Orin",
+    ],
     features: [
-      "Species-level fish detection",
-      "Edge-optimized inference pipeline",
-      "Designed for real-world underwater conditions",
+      "YOLOv8 detection with tracking + dredge-specific classes",
+      "TensorRT/DeepStream optimized inference on NVIDIA AGX Orin",
+      "Dynamic GStreamer pipeline for multi-RTSP, multi-camera scaling",
+      "Crash-free camera switching + recording via improved memory handling",
+      "SQLite logging for detection events and future analytics",
     ],
-    functionalities: [
-      "Frame ingest + stabilization/denoise options",
-      "Detection + class confidence thresholds",
-      "Clip/segment extraction for highlights",
-      "Export logs for analytics dashboards",
-    ],
+
     // ✅ Add project images carousel
     images: [
       "./assets/images/AnglerVision_Portfolio/Slide8.jpg",
