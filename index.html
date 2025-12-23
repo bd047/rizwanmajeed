@@ -129,20 +129,26 @@
 
           <ul class="social-list">
             <li class="social-item">
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
+              <a
+                href="https://github.com/Ahmadshahzad2"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </li>
 
             <li class="social-item">
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a
+                href="https://ca.linkedin.com/in/ahmadshahzad2000"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
           </ul>
@@ -444,6 +450,8 @@
           </header>
 
           <section class="skills-category-nav">
+            <button class="skills-tab" data-skill-tab="all">All</button>
+
             <button class="skills-tab active" data-skill-tab="programming">
               Programming
             </button>
@@ -689,51 +697,168 @@
             <div class="skill-panel" data-skill-content="ai-llm">
               <h3 class="skill-heading">AI & LLMs</h3>
 
-              <ul class="skills-list-text">
-                <li>Supervised / Unsupervised Learning</li>
-                <li>Time Series Forecasting</li>
-                <li>Predictive Modeling</li>
-                <li>Model Evaluation (F1, AUC)</li>
-                <li>LangChain, LangGraph, RAG</li>
-                <li>GPT APIs (3.5, 4, 4o), LLaMA Index</li>
-                <li>Speech: Deepgram, ElevenLabs, Voice Cloning</li>
-              </ul>
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <ion-icon name="school-outline"></ion-icon>
+                  <span>Supervised / Unsupervised</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="pulse-outline"></ion-icon>
+                  <span>Time Series Forecasting</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="trending-up-outline"></ion-icon>
+                  <span>Predictive Modeling</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="stats-chart-outline"></ion-icon>
+                  <span>Model Evaluation (F1, AUC)</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="git-network-outline"></ion-icon>
+                  <span>RAG (LangChain / LangGraph)</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                  <span>GPT APIs (3.5 / 4 / 4o)</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="mic-outline"></ion-icon>
+                  <span>Speech (Deepgram / ElevenLabs)</span>
+                </div>
+              </div>
             </div>
 
             <!-- Computer Vision & 3D AI -->
             <div class="skill-panel" data-skill-content="vision-3d">
               <h3 class="skill-heading">Computer Vision & 3D AI</h3>
 
-              <ul class="skills-list-text">
-                <li>Object Detection, Segmentation, Action Recognition</li>
-                <li>YOLOv8, OpenCV, MediaPipe, ConvLSTM</li>
-                <li>Pose Estimation</li>
-                <li>3D Vision: Point Cloud Segmentation, Depth Estimation</li>
-              </ul>
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <ion-icon name="scan-outline"></ion-icon>
+                  <span>Object Detection</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="shapes-outline"></ion-icon>
+                  <span>Segmentation</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="walk-outline"></ion-icon>
+                  <span>Action Recognition</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="body-outline"></ion-icon>
+                  <span>Pose Estimation</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="cube-outline"></ion-icon>
+                  <span>Point Cloud Segmentation</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="layers-outline"></ion-icon>
+                  <span>Depth Estimation</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="infinite-outline"></ion-icon>
+                  <span>ConvLSTM</span>
+                </div>
+              </div>
             </div>
 
             <!-- MLOps & Infrastructure -->
             <div class="skill-panel" data-skill-content="mlops-core">
               <h3 class="skill-heading">MLOps & Infrastructure</h3>
 
-              <ul class="skills-list-text">
-                <li>AWS (Lambda, EC2, S3, SageMaker, Bedrock, EventBridge)</li>
-                <li>GCP (BigQuery, Looker Studio)</li>
-                <li>Docker, Kubernetes</li>
-                <li>Kafka, SQS</li>
-                <li>GitHub Actions, Jenkins</li>
-              </ul>
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/aws.png" alt="AWS" />
+                  <span>AWS (Lambda / EC2 / S3 / Bedrock)</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/bigquery.png" alt="GCP" />
+                  <span>GCP (BigQuery / Looker)</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/docker.png" alt="Docker" />
+                  <span>Docker</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/kuber.png" alt="Kubernetes" />
+                  <span>Kubernetes</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="swap-horizontal-outline"></ion-icon>
+                  <span>Kafka / SQS</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                  <span>GitHub Actions</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="construct-outline"></ion-icon>
+                  <span>Jenkins</span>
+                </div>
+              </div>
             </div>
 
             <!-- APIs & Back-End Engineering -->
             <div class="skill-panel" data-skill-content="backend-advanced">
               <h3 class="skill-heading">APIs & Back-End Engineering</h3>
 
-              <ul class="skills-list-text">
-                <li>RESTful APIs, Flask, FastAPI</li>
-                <li>boto3, Webhooks</li>
-                <li>PostgreSQL, MySQL, MongoDB, DynamoDB</li>
-              </ul>
+              <div class="skills-icons-grid">
+                <div class="skill-box">
+                  <img src="./assets/icons2/api.png" alt="APIs" />
+                  <span>REST APIs</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="link-outline"></ion-icon>
+                  <span>Webhooks</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="cloud-outline"></ion-icon>
+                  <span>boto3 (AWS SDK)</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/postgre.jfif" alt="PostgreSQL" />
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="server-outline"></ion-icon>
+                  <span>MySQL</span>
+                </div>
+
+                <div class="skill-box">
+                  <img src="./assets/icons2/mongodb.png" alt="MongoDB" />
+                  <span>MongoDB</span>
+                </div>
+
+                <div class="skill-box">
+                  <ion-icon name="albums-outline"></ion-icon>
+                  <span>DynamoDB</span>
+                </div>
+              </div>
             </div>
           </section>
         </article>
@@ -1283,10 +1408,11 @@
           <section class="mapbox" data-mapbox>
             <figure>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.7603999009923!2d-79.38705668449876!3d43.64256697912162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d92b4b8c3f%3A0x4f8f5b4c7e5b1b0!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sbd!4v1735080000000!5m2!1sen!2sbd"
                 width="400"
                 height="300"
                 loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </figure>
           </section>
@@ -1363,7 +1489,322 @@
                 ❌ Something went wrong. Please try again later.
               </p>
             </section>
+            <!-- =========
+Skills js
+============== -->
 
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                // 1) If any panels still use text lists, auto-convert them to icon boxes
+                document.querySelectorAll(".skills-list-text").forEach((ul) => {
+                  const items = [...ul.querySelectorAll("li")]
+                    .map((li) => li.textContent.trim())
+                    .filter(Boolean);
+
+                  const grid = document.createElement("div");
+                  grid.className = "skills-icons-grid";
+
+                  items.forEach((text) => {
+                    const box = document.createElement("div");
+                    box.className = "skill-box";
+
+                    const img = document.createElement("img");
+                    img.className = "skill-icon";
+                    img.alt = text;
+
+                    const span = document.createElement("span");
+                    span.textContent = text;
+
+                    box.appendChild(img);
+                    box.appendChild(span);
+                    grid.appendChild(box);
+                  });
+
+                  ul.replaceWith(grid);
+                });
+
+                // 2) Replace every icon in every skill box automatically
+                document.querySelectorAll(".skill-box").forEach((box) => {
+                  const label = (
+                    box.querySelector("span")?.textContent || ""
+                  ).trim();
+                  if (!label) return;
+
+                  // Remove ionicons if any exist
+                  const ion = box.querySelector("ion-icon");
+                  if (ion) ion.remove();
+
+                  // Ensure we have an <img>
+                  let img = box.querySelector("img");
+                  if (!img) {
+                    img = document.createElement("img");
+                    img.className = "skill-icon";
+                    img.alt = label;
+                    box.insertBefore(img, box.firstChild);
+                  } else {
+                    img.classList.add("skill-icon");
+                    img.alt = label;
+                  }
+
+                  const { url, fallback } = getIconForSkill(label);
+
+                  img.src = url;
+                  img.onerror = () => {
+                    if (fallback && img.src !== fallback) {
+                      img.src = fallback;
+                    } else {
+                      img.src =
+                        "https://api.iconify.design/fluent-emoji-flat:gear.svg";
+                    }
+                  };
+                });
+              });
+
+              // ✅ Auto icon resolver (Iconify CDN)
+              function getIconForSkill(label) {
+                const s = label.toLowerCase();
+
+                // --- Programming ---
+                if (s.includes("python"))
+                  return { url: "https://api.iconify.design/logos:python.svg" };
+                if (s.includes("bash"))
+                  return {
+                    url: "https://api.iconify.design/logos:bash-icon.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:terminal.svg",
+                  };
+                if (s.startsWith("r ") || s.includes("r ("))
+                  return { url: "https://api.iconify.design/logos:r-lang.svg" };
+                if (s.includes("sql"))
+                  return {
+                    url: "https://api.iconify.design/logos:postgresql.svg",
+                  };
+
+                // --- ML / DL ---
+                if (s.includes("pytorch"))
+                  return {
+                    url: "https://api.iconify.design/logos:pytorch.svg",
+                  };
+                if (s.includes("tensorflow"))
+                  return {
+                    url: "https://api.iconify.design/logos:tensorflow.svg",
+                  };
+                if (s.includes("scikit"))
+                  return {
+                    url: "https://api.iconify.design/logos:scikit-learn.svg",
+                  };
+                if (s.includes("xgboost"))
+                  return {
+                    url: "https://api.iconify.design/simple-icons:xgboost.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
+                  };
+
+                // --- LLM / NLP ---
+                if (s.includes("gpt"))
+                  return {
+                    url: "https://api.iconify.design/logos:openai-icon.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:robot.svg",
+                  };
+                if (s.includes("langchain"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:link.svg",
+                  };
+                if (s.includes("langgraph"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:network.svg",
+                  };
+                if (s.includes("deepgram"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:studio-microphone.svg",
+                  };
+
+                // --- Computer Vision ---
+                if (s.includes("yolo"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:eyes.svg",
+                  };
+                if (s.includes("opencv"))
+                  return { url: "https://api.iconify.design/logos:opencv.svg" };
+                if (s.includes("mediapipe"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:camera.svg",
+                  };
+                if (s.includes("pose"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:person-running.svg",
+                  };
+                if (
+                  s.includes("3d") ||
+                  s.includes("point cloud") ||
+                  s.includes("depth")
+                )
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:cube.svg",
+                  };
+
+                // --- Cloud / MLOps ---
+                if (s.includes("aws"))
+                  return { url: "https://api.iconify.design/logos:aws.svg" };
+                if (s.includes("docker"))
+                  return {
+                    url: "https://api.iconify.design/logos:docker-icon.svg",
+                  };
+                if (s.includes("kubernetes"))
+                  return {
+                    url: "https://api.iconify.design/logos:kubernetes.svg",
+                  };
+                if (s.includes("bigquery"))
+                  return {
+                    url: "https://api.iconify.design/logos:google-bigquery.svg",
+                  };
+                if (s.includes("kafka"))
+                  return {
+                    url: "https://api.iconify.design/logos:kafka-icon.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:satellite-antenna.svg",
+                  };
+                if (s.includes("sqs"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:inbox-tray.svg",
+                  };
+                if (s.includes("github actions"))
+                  return {
+                    url: "https://api.iconify.design/logos:github-actions.svg",
+                    fallback:
+                      "https://api.iconify.design/logos:github-icon.svg",
+                  };
+                if (s.includes("jenkins"))
+                  return {
+                    url: "https://api.iconify.design/logos:jenkins.svg",
+                  };
+
+                // --- Backend / Tools ---
+                if (s.includes("fastapi"))
+                  return {
+                    url: "https://api.iconify.design/logos:fastapi-icon.svg",
+                  };
+                if (s.includes("flask"))
+                  return {
+                    url: "https://api.iconify.design/logos:flask.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:test-tube.svg",
+                  };
+                if (s.includes("postgres"))
+                  return {
+                    url: "https://api.iconify.design/logos:postgresql.svg",
+                  };
+                if (s.includes("mongodb"))
+                  return {
+                    url: "https://api.iconify.design/logos:mongodb-icon.svg",
+                  };
+                if (s.includes("git "))
+                  return {
+                    url: "https://api.iconify.design/logos:git-icon.svg",
+                  };
+                if (s.includes("github"))
+                  return {
+                    url: "https://api.iconify.design/logos:github-icon.svg",
+                  };
+                if (s.includes("linux"))
+                  return {
+                    url: "https://api.iconify.design/logos:linux-tux.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:penguin.svg",
+                  };
+                if (s.includes("jupyter"))
+                  return {
+                    url: "https://api.iconify.design/logos:jupyter.svg",
+                  };
+                if (s.includes("looker"))
+                  return {
+                    url: "https://api.iconify.design/logos:looker-icon.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:bar-chart.svg",
+                  };
+                if (s.includes("redis"))
+                  return { url: "https://api.iconify.design/logos:redis.svg" };
+                if (s.includes("minio"))
+                  return {
+                    url: "https://api.iconify.design/simple-icons:minio.svg",
+                    fallback:
+                      "https://api.iconify.design/fluent-emoji-flat:package.svg",
+                  };
+                if (s.includes("milvus"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:card-index-dividers.svg",
+                  };
+                if (s.includes("tavily"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:magnifying-glass-tilted-left.svg",
+                  };
+
+                // --- Concepts (fallback) ---
+                if (s.includes("forecast"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
+                  };
+                if (
+                  s.includes("evaluation") ||
+                  s.includes("f1") ||
+                  s.includes("auc")
+                )
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:bar-chart.svg",
+                  };
+                if (s.includes("predictive"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
+                  };
+                if (s.includes("rag"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:link.svg",
+                  };
+                if (s.includes("speech") || s.includes("voice"))
+                  return {
+                    url: "https://api.iconify.design/fluent-emoji-flat:studio-microphone.svg",
+                  };
+
+                // Default icon
+                return {
+                  url: "https://api.iconify.design/fluent-emoji-flat:gear.svg",
+                };
+              }
+            </script>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const tabs = document.querySelectorAll(".skills-tab");
+                const panels = document.querySelectorAll(".skill-panel");
+
+                tabs.forEach((tab) => {
+                  tab.addEventListener("click", () => {
+                    const target = tab.dataset.skillTab;
+
+                    // active tab styling
+                    tabs.forEach((t) => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    // show panels
+                    if (target === "all") {
+                      panels.forEach((p) => p.classList.add("active"));
+                      return;
+                    }
+
+                    panels.forEach((p) => p.classList.remove("active"));
+                    const match = document.querySelector(
+                      `.skill-panel[data-skill-content="${target}"]`
+                    );
+                    if (match) match.classList.add("active");
+                  });
+                });
+              });
+            </script>
+
+            <!-- =====
+end skills js
+=== -->
             <script>
               // ✅ JavaScript for success/error messages
               const form = document.getElementById("contact-form");

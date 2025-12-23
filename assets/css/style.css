@@ -2310,3 +2310,17 @@ Live button
 .pd-btn-live:hover {
   filter: brightness(0.95);
 }
+
+.skill-box ion-icon {
+  font-size: 42px;
+  display: block;
+  margin: 0 auto 10px;
+}
+/* uniform icon size + keep original colors */
+.skill-box img.skill-icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+}
