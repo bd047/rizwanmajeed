@@ -226,6 +226,10 @@ const projectsData = {
      💻 WEB DEVELOPMENT
   =============================== */
 
+  /* ==============================
+     💻 WEB DEVELOPMENT
+  =============================== */
+
   basketballBot: {
     title: "Basketball Performance Analysis Chatbot",
     category: "Web Development",
@@ -251,21 +255,112 @@ const projectsData = {
     ],
     videoUrl:
       "https://drive.google.com/file/d/1NtNi1Eeemms35bNUqCHdGyMc7LbPV5Oq/preview",
+    // (you said exclude basketball from carousel earlier, so remove images if you want)
+  },
 
+  // ✅ NEW PROJECT #1 (Web Development)
+  plumberseoVisibility: {
+    title: "PlumberSEO Visibility Analyzer",
+    category: "Web Development",
+    image: "./assets/images/project-plumberseo.jpg",
+    overview:
+      "Self-serve AI visibility reporting platform that checks how local service businesses appear across GPT/Gemini/Claude/Perplexity/Grok, with scheduling via n8n and report delivery to Google Sheets.",
+    description: `
+      <p>
+        Built an end-to-end AI visibility reporting system for PlumberSEO to measure how plumbing/HVAC/electrical businesses are represented across major AI models.
+        Includes a self-serve website + admin dashboard for query customization, client management, and automated scheduled reporting.
+      </p>
+ 
+    `,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Flask (Python)",
+      "AWS Lambda",
+      "API Gateway",
+      "DynamoDB",
+      "AWS Amplify",
+      "n8n (AWS EC2)",
+      "Google Sheets API",
+      "OpenAI / Gemini / Claude / Perplexity / Grok APIs",
+    ],
+    features: [
+      "Self-serve report generation (website)",
+      "Admin dashboard (clients + queries + schedules)",
+      "Multi-model visibility & ranking extraction",
+      "Automated scheduled reports via n8n",
+      "Historical tracking in Google Sheets",
+    ],
+    functionalities: [
+      "OTP/email verification before report generation",
+      "Run queries across multiple AI providers",
+      "Extract mentions + rank position + visibility flags",
+      "Compute AI visibility score",
+      "Toggle scheduling and update frequency via admin controls",
+    ],
     images: [
-      "./assets/images/Basketball_Performance_Chatbot/Slide1.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide2.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide3.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide4.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide5.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide6.jpg",
-      "./assets/images/Basketball_Performance_Chatbot/Slide7.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide1.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide2.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide3.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide4.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide5.jpg",
+      "./assets/images/AI_Visibility_Analyzer_for_PlumberSEO/Slide6.jpg",
+    ],
+    links: {
+      "Live Site": "https://visibilityreport.ai",
+    },
+    // videoUrl: "https://www.loom.com/embed/YOUR_LOOM_ID",
+  },
+
+  // ✅ NEW PROJECT #2 (Web Development)
+  facialRecognitionApp: {
+    title: "AWS-Powered Facial Recognition Web App",
+    category: "Web Development",
+    image: "assets/images/AWS_Facial_Recognition_Case_Study/thumbnail.jpg",
+    overview:
+      "Cloud-native face registration + verification web app using AWS Rekognition with a serverless Lambda backend and DynamoDB for metadata.",
+    description: `
+      <p>
+        Built a production-ready facial recognition web app for user onboarding and identity verification.
+        Users can register a face (IndexFaces) and verify identity (SearchFacesByImage) with similarity scoring.
+      </p>
+
+       
+    `,
+    technologies: [
+      "React",
+      "WebRTC",
+      "AWS Lambda",
+      "Amazon Rekognition",
+      "DynamoDB",
+      "AWS Amplify",
+      "CloudWatch",
+      "IAM",
+    ],
+    features: [
+      "Real-time camera capture + upload",
+      "Face registration + similarity scoring",
+      "Serverless scaling + monitoring",
+      "Production-ready API-driven flow",
+    ],
+    functionalities: [
+      "Capture image → send to backend",
+      "IndexFaces for enrollment",
+      "SearchFacesByImage for verification",
+      "Store face metadata in DynamoDB",
+      "Return similarity score + status to UI",
+    ],
+    images: [
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide1.jpg",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide2.jpg",
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide3.jpg",
+
+      "./assets/images/AWS_Facial_Recognition_Case_Study/Slide4.jpg",
     ],
   },
 
   /* ==============================
-     📸 COMPUTER VISION
-  =============================== */
+     📸 COMPUTER VISION  =============================== */
 
   mirrorVision: {
     title: "MirrorVision – iOS Pose Recognition App",
