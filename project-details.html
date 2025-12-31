@@ -275,17 +275,17 @@
           if (!Array.isArray(images) || images.length === 0) return "";
 
           return `
-    <h4 style="margin: 0 0 10px 0;">🖼️ Project Presentation</h4>
-    <div class="pd-carousel" id="pd-carousel">
-      <button class="pd-carousel-btn" id="pd-prev" aria-label="Previous image">‹</button>
+          <h4 style="margin: 0 0 10px 0;">🖼️ Project Presentation</h4>
+          <div class="pd-carousel" id="pd-carousel">
+            <button class="pd-carousel-btn" id="pd-prev" aria-label="Previous image">‹</button>
 
-      <div class="pd-carousel-frame">
-        <img id="pd-carousel-img" src="${images[0]}" alt="Project screenshot" loading="lazy" />
-      </div>
+            <div class="pd-carousel-frame">
+              <img id="pd-carousel-img" src="${images[0]}" alt="Project screenshot" loading="lazy" />
+            </div>
 
-      <button class="pd-carousel-btn" id="pd-next" aria-label="Next image">›</button>
-    </div>
-  `;
+            <button class="pd-carousel-btn" id="pd-next" aria-label="Next image">›</button>
+          </div>
+        `;
         }
 
         function initCarousel(images) {
@@ -299,13 +299,34 @@
 
           let idx = 0;
 
+          const updateButtons = () => {
+            // Hide prev on first
+            if (idx === 0) {
+              prevBtn.style.display = "none";
+            } else {
+              prevBtn.style.display = "inline-flex";
+            }
+
+            // Hide next on last
+            if (idx === images.length - 1) {
+              nextBtn.style.display = "none";
+            } else {
+              nextBtn.style.display = "inline-flex";
+            }
+          };
+
           const show = (i) => {
-            idx = (i + images.length) % images.length;
+            // Clamp (no wrap)
+            idx = Math.max(0, Math.min(i, images.length - 1));
             imgEl.src = images[idx];
+            updateButtons();
           };
 
           prevBtn.onclick = () => show(idx - 1);
           nextBtn.onclick = () => show(idx + 1);
+
+          // initial render
+          show(0);
 
           // keyboard support
           window.addEventListener("keydown", (e) => {
@@ -328,17 +349,17 @@
         // 2) Video
         if (project.videoUrl) {
           mediaSection.innerHTML += `
-    <h4 style="margin: 16px 0 10px 0;">🎥 Project Demo</h4>
-    <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen></iframe>
-  `;
+          <h4 style="margin: 16px 0 10px 0;">🎥 Project Demo</h4>
+          <iframe src="${project.videoUrl}" frameborder="0" allowfullscreen></iframe>
+        `;
         }
 
         // 3) Slides
         if (project.slidesUrl) {
           mediaSection.innerHTML += `
-    <h4 style="margin: 16px 0 10px 0;">📊 Presentation Slides</h4>
-    <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen></iframe>
-  `;
+          <h4 style="margin: 16px 0 10px 0;">📊 Presentation Slides</h4>
+          <iframe src="${project.slidesUrl}" frameborder="0" allowfullscreen></iframe>
+        `;
         }
 
         // If nothing exists
