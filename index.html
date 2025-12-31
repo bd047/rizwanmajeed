@@ -880,9 +880,9 @@
               <li class="filter-item">
                 <button data-filter-btn>AI Agents</button>
               </li>
-              <li class="filter-item">
+              <!-- <li class="filter-item">
                 <button data-filter-btn>Web Development</button>
-              </li>
+              </li> -->
               <li class="filter-item">
                 <button data-filter-btn>Computer Vision</button>
               </li>
@@ -1106,26 +1106,7 @@
                 </a>
               </li>
 
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="Web Development"
-              >
-                <a href="project-details.html?id=facialRecognitionApp">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img
-                      src="./assets/images/AWS_Facial_Recognition_Case_Study/thumbnail.jpg"
-                      alt="AWS Facial Recognition Web App"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 class="project-title">AWS Facial Recognition Web App</h3>
-                  <p class="project-category">Web Development</p>
-                </a>
-              </li>
+             
 
               <!-- 📸 COMPUTER VISION -->
               <li
@@ -1171,7 +1152,26 @@
                   <p class="project-category">Computer Vision</p>
                 </a>
               </li>
-
+ <li
+                class="project-item active"
+                data-filter-item
+                data-category="Computer Vision"
+              >
+                <a href="project-details.html?id=facialRecognitionApp">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="./assets/images/AWS_Facial_Recognition_Case_Study/thumbnail.jpg"
+                      alt="AWS Facial Recognition Web App"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">AWS Facial Recognition Web App</h3>
+                  <p class="project-category">Computer Vision</p>
+                </a>
+              </li>
               <li
                 class="project-item active"
                 data-filter-item
@@ -1561,207 +1561,212 @@ Skills js
               function getIconForSkill(label) {
                 const s = label.toLowerCase();
 
-                // --- Programming ---
-                if (s.includes("python"))
-                  return { url: "https://api.iconify.design/logos:python.svg" };
-                if (s.includes("bash"))
-                  return {
-                    url: "https://api.iconify.design/logos:bash-icon.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:terminal.svg",
-                  };
-                if (s.startsWith("r ") || s.includes("r ("))
-                  return { url: "https://api.iconify.design/logos:r-lang.svg" };
-                if (s.includes("sql"))
-                  return {
-                    url: "https://api.iconify.design/logos:postgresql.svg",
-                  };
+               // --- Programming ---
+if (s.includes("python"))
+  return { url: "https://api.iconify.design/logos:python.svg" };
 
-                // --- ML / DL ---
-                if (s.includes("pytorch"))
-                  return {
-                    url: "https://api.iconify.design/logos:pytorch.svg",
-                  };
-                if (s.includes("tensorflow"))
-                  return {
-                    url: "https://api.iconify.design/logos:tensorflow.svg",
-                  };
-                if (s.includes("scikit"))
-                  return {
-                    url: "https://api.iconify.design/logos:scikit-learn.svg",
-                  };
-                if (s.includes("xgboost"))
-                  return {
-                    url: "https://api.iconify.design/simple-icons:xgboost.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
-                  };
+if (s.includes("bash"))
+  return {
+    url: "https://api.iconify.design/logos:bash-icon.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:terminal.svg",
+  };
 
-                // --- LLM / NLP ---
-                if (s.includes("gpt"))
-                  return {
-                    url: "https://api.iconify.design/logos:openai-icon.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:robot.svg",
-                  };
-                if (s.includes("langchain"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:link.svg",
-                  };
-                if (s.includes("langgraph"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:network.svg",
-                  };
-                if (s.includes("deepgram"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:studio-microphone.svg",
-                  };
+if (s.startsWith("r ") || s.includes("r ("))
+  return { url: "https://api.iconify.design/logos:r-lang.svg" };
 
-                // --- Computer Vision ---
-                if (s.includes("yolo"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:eyes.svg",
-                  };
-                if (s.includes("opencv"))
-                  return { url: "https://api.iconify.design/logos:opencv.svg" };
-                if (s.includes("mediapipe"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:camera.svg",
-                  };
-                if (s.includes("pose"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:person-running.svg",
-                  };
-                if (
-                  s.includes("3d") ||
-                  s.includes("point cloud") ||
-                  s.includes("depth")
-                )
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:cube.svg",
-                  };
+// If you want SQL generic (not Postgres), use a DB icon.
+// Keeping Postgres is ok if SQL is mostly Postgres for you.
+if (s.includes("sql"))
+  return { url: "https://api.iconify.design/logos:postgresql.svg" };
 
-                // --- Cloud / MLOps ---
-                if (s.includes("aws"))
-                  return { url: "https://api.iconify.design/logos:aws.svg" };
-                if (s.includes("docker"))
-                  return {
-                    url: "https://api.iconify.design/logos:docker-icon.svg",
-                  };
-                if (s.includes("kubernetes"))
-                  return {
-                    url: "https://api.iconify.design/logos:kubernetes.svg",
-                  };
-                if (s.includes("bigquery"))
-                  return {
-                    url: "https://api.iconify.design/logos:google-bigquery.svg",
-                  };
-                if (s.includes("kafka"))
-                  return {
-                    url: "https://api.iconify.design/logos:kafka-icon.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:satellite-antenna.svg",
-                  };
-                if (s.includes("sqs"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:inbox-tray.svg",
-                  };
-                if (s.includes("github actions"))
-                  return {
-                    url: "https://api.iconify.design/logos:github-actions.svg",
-                    fallback:
-                      "https://api.iconify.design/logos:github-icon.svg",
-                  };
-                if (s.includes("jenkins"))
-                  return {
-                    url: "https://api.iconify.design/logos:jenkins.svg",
-                  };
+// --- ML / DL ---
+if (s.includes("pytorch"))
+  return { url: "https://api.iconify.design/logos:pytorch.svg" };
 
-                // --- Backend / Tools ---
-                if (s.includes("fastapi"))
-                  return {
-                    url: "https://api.iconify.design/logos:fastapi-icon.svg",
-                  };
-                if (s.includes("flask"))
-                  return {
-                    url: "https://api.iconify.design/logos:flask.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:test-tube.svg",
-                  };
-                if (s.includes("postgres"))
-                  return {
-                    url: "https://api.iconify.design/logos:postgresql.svg",
-                  };
-                if (s.includes("mongodb"))
-                  return {
-                    url: "https://api.iconify.design/logos:mongodb-icon.svg",
-                  };
-                if (s.includes("git "))
-                  return {
-                    url: "https://api.iconify.design/logos:git-icon.svg",
-                  };
-                if (s.includes("github"))
-                  return {
-                    url: "https://api.iconify.design/logos:github-icon.svg",
-                  };
-                if (s.includes("linux"))
-                  return {
-                    url: "https://api.iconify.design/logos:linux-tux.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:penguin.svg",
-                  };
-                if (s.includes("jupyter"))
-                  return {
-                    url: "https://api.iconify.design/logos:jupyter.svg",
-                  };
-                if (s.includes("looker"))
-                  return {
-                    url: "https://api.iconify.design/logos:looker-icon.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:bar-chart.svg",
-                  };
-                if (s.includes("redis"))
-                  return { url: "https://api.iconify.design/logos:redis.svg" };
-                if (s.includes("minio"))
-                  return {
-                    url: "https://api.iconify.design/simple-icons:minio.svg",
-                    fallback:
-                      "https://api.iconify.design/fluent-emoji-flat:package.svg",
-                  };
-                if (s.includes("milvus"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:card-index-dividers.svg",
-                  };
-                if (s.includes("tavily"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:magnifying-glass-tilted-left.svg",
-                  };
+if (s.includes("tensorflow"))
+  return { url: "https://api.iconify.design/logos:tensorflow.svg" };
 
-                // --- Concepts (fallback) ---
-                if (s.includes("forecast"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
-                  };
-                if (
-                  s.includes("evaluation") ||
-                  s.includes("f1") ||
-                  s.includes("auc")
-                )
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:bar-chart.svg",
-                  };
-                if (s.includes("predictive"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
-                  };
-                if (s.includes("rag"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:link.svg",
-                  };
-                if (s.includes("speech") || s.includes("voice"))
-                  return {
-                    url: "https://api.iconify.design/fluent-emoji-flat:studio-microphone.svg",
-                  };
+// ✅ More “original”/official than logos:scikit-learn for many themes:
+if (s.includes("scikit") || s.includes("scikit-learn"))
+  return { url: "https://api.iconify.design/simple-icons:scikitlearn.svg?color=white" };
+
+if (s.includes("xgboost"))
+  return {
+    url: "https://api.iconify.design/simple-icons:xgboost.svg?color=white",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:chart-increasing.svg",
+  };
+
+// --- LLM / NLP ---
+if (s.includes("gpt") || s.includes("openai"))
+  return {
+    url: "https://api.iconify.design/logos:openai-icon.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:robot.svg",
+  };
+
+if (s.includes("langchain"))
+  return { url: "https://api.iconify.design/simple-icons:langchain.svg?color=white" };
+
+// ✅ Original LangGraph icon (instead of the network emoji)
+if (s.includes("langgraph"))
+  return { url: "https://api.iconify.design/simple-icons:langgraph.svg?color=white" };
+
+if (s.includes("deepgram"))
+  return { url: "https://api.iconify.design/simple-icons:deepgram.svg?color=white" };
+
+// --- Computer Vision ---
+if (s.includes("yolo") || s.includes("yolov8"))
+  return { url: "https://api.iconify.design/simple-icons:ultralytics.svg?color=white" };
+
+if (s.includes("opencv"))
+  return { url: "https://api.iconify.design/logos:opencv.svg" };
+
+if (s.includes("mediapipe"))
+  return { url: "https://api.iconify.design/simple-icons:google.svg?color=white", fallback: "https://api.iconify.design/fluent-emoji-flat:camera.svg" };
+
+// --- CV / 3D Concepts (not brands; use relevant icons) ---
+if (s.includes("object detection"))
+  return { url: "https://api.iconify.design/material-symbols:target.svg?color=white" };
+
+if (s.includes("segmentation"))
+  return { url: "https://api.iconify.design/material-symbols:select-all.svg?color=white" };
+
+if (s.includes("action recognition"))
+  return { url: "https://api.iconify.design/material-symbols:directions-run.svg?color=white" };
+
+if (s.includes("point cloud segmentation") || s.includes("point cloud"))
+  return { url: "https://api.iconify.design/material-symbols:point-scan.svg?color=white" };
+
+if (s.includes("depth estimation") || (s.includes("depth") && !s.includes("deepgram")))
+  return { url: "https://api.iconify.design/material-symbols:depth.svg?color=white" };
+
+if (s.includes("convlstm"))
+  return { url: "https://api.iconify.design/material-symbols:timeline.svg?color=white" };
+
+if (s.includes("pose"))
+  return { url: "https://api.iconify.design/material-symbols:accessibility-new.svg?color=white" };
+
+// if you keep a generic 3D bucket:
+if (s.includes("3d") || s.includes("cv & 3d") || s.includes("point cloud") || s.includes("depth"))
+  return { url: "https://api.iconify.design/material-symbols:view-in-ar.svg?color=white" };
+
+// --- Cloud / MLOps ---
+if (s.includes("aws"))
+  return { url: "https://api.iconify.design/logos:aws.svg" };
+
+if (s.includes("docker"))
+  return { url: "https://api.iconify.design/logos:docker-icon.svg" };
+
+if (s.includes("kubernetes"))
+  return { url: "https://api.iconify.design/logos:kubernetes.svg" };
+
+// ✅ BigQuery original logo
+if (s.includes("bigquery"))
+  return { url: "https://api.iconify.design/logos:google-bigquery.svg" };
+
+// ✅ GCP (BigQuery / Looker) – use Google Cloud logo (original)
+if (s.includes("gcp") || s.includes("google cloud"))
+  return { url: "https://api.iconify.design/logos:google-cloud.svg" };
+
+// ✅ Looker (if your label contains it)
+if (s.includes("looker"))
+  return {
+    url: "https://api.iconify.design/logos:looker-icon.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:bar-chart.svg",
+  };
+
+if (s.includes("kafka"))
+  return {
+    url: "https://api.iconify.design/logos:kafka-icon.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:satellite-antenna.svg",
+  };
+
+if (s.includes("sqs"))
+  return { url: "https://api.iconify.design/simple-icons:amazonsqs.svg?color=white", fallback: "https://api.iconify.design/fluent-emoji-flat:inbox-tray.svg" };
+
+if (s.includes("github actions"))
+  return {
+    url: "https://api.iconify.design/logos:github-actions.svg",
+    fallback: "https://api.iconify.design/logos:github-icon.svg",
+  };
+
+if (s.includes("jenkins"))
+  return { url: "https://api.iconify.design/logos:jenkins.svg" };
+
+// --- Backend / Tools ---
+if (s.includes("fastapi"))
+  return { url: "https://api.iconify.design/logos:fastapi-icon.svg" };
+
+if (s.includes("flask"))
+  return {
+    url: "https://api.iconify.design/logos:flask.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:test-tube.svg",
+  };
+
+if (s.includes("postgres"))
+  return { url: "https://api.iconify.design/logos:postgresql.svg" };
+
+if (s.includes("mongodb"))
+  return { url: "https://api.iconify.design/logos:mongodb-icon.svg" };
+
+// ✅ Git original logo (catch "git" cleanly without matching "github")
+if ((s.includes("git") && !s.includes("github")))
+  return { url: "https://api.iconify.design/logos:git-icon.svg" };
+
+if (s.includes("github"))
+  return { url: "https://api.iconify.design/logos:github-icon.svg" };
+
+if (s.includes("linux"))
+  return {
+    url: "https://api.iconify.design/logos:linux-tux.svg",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:penguin.svg",
+  };
+
+if (s.includes("jupyter"))
+  return { url: "https://api.iconify.design/logos:jupyter.svg" };
+
+if (s.includes("redis"))
+  return { url: "https://api.iconify.design/logos:redis.svg" };
+
+if (s.includes("minio"))
+  return {
+    url: "https://api.iconify.design/simple-icons:minio.svg?color=white",
+    fallback: "https://api.iconify.design/fluent-emoji-flat:package.svg",
+  };
+
+if (s.includes("milvus"))
+  return { url: "https://api.iconify.design/simple-icons:milvus.svg?color=white", fallback: "https://api.iconify.design/fluent-emoji-flat:card-index-dividers.svg" };
+
+if (s.includes("tavily"))
+  return { url: "https://api.iconify.design/fluent-emoji-flat:magnifying-glass-tilted-left.svg" };
+
+// --- Concepts (fallback) ---
+if (s.includes("supervised") || s.includes("unsupervised"))
+  return { url: "https://api.iconify.design/material-symbols:school.svg?color=white" };
+
+if (s.includes("forecast") || s.includes("time series"))
+  return { url: "https://api.iconify.design/material-symbols:query-stats.svg?color=white" };
+
+if (s.includes("evaluation") || s.includes("f1") || s.includes("auc"))
+  return { url: "https://api.iconify.design/material-symbols:bar-chart.svg?color=white" };
+
+if (s.includes("predictive"))
+  return { url: "https://api.iconify.design/material-symbols:trending-up.svg?color=white" };
+
+if (s.includes("rag"))
+  return { url: "https://api.iconify.design/material-symbols:link.svg?color=white" };
+
+if (s.includes("speech") || s.includes("voice"))
+  return { url: "https://api.iconify.design/material-symbols:mic.svg?color=white" };
+
+// ✅ REST APIs + Webhooks
+if (s.includes("rest api") || s.includes("rest apis") || (s.includes("api") && s.includes("rest")))
+  return { url: "https://api.iconify.design/simple-icons:openapiinitiative.svg?color=white", fallback: "https://api.iconify.design/material-symbols:api.svg?color=white" };
+
+if (s.includes("webhook") || s.includes("webhooks"))
+  return { url: "https://api.iconify.design/material-symbols:link.svg?color=white" };
+
+// Default icon
+return { url: "https://api.iconify.design/fluent-emoji-flat:gear.svg" };
 
                 // Default icon
                 return {

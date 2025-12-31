@@ -426,7 +426,7 @@ const projectsData = {
   // ✅ NEW PROJECT #2 (Web Development)
   facialRecognitionApp: {
     title: "AWS-Powered Facial Recognition Web App",
-    category: "Web Development",
+    category: "Computer Vision",
     image: "assets/images/AWS_Facial_Recognition_Case_Study/thumbnail.jpg",
     overview:
       "Cloud-native face registration + verification web app using AWS Rekognition with a serverless Lambda backend and DynamoDB for metadata.",
