@@ -320,7 +320,7 @@ const projectsData = {
 
   basketballBot: {
     title: "Basketball Performance Analysis Chatbot",
-    category: "Web Development",
+    category: "AI Agents",
     image: "./assets/images/project-basketball.jpg",
     overview:
       "LangGraph-powered chatbot that answers performance questions over a stats database and returns structured insights and visual-ready outputs.",
@@ -371,7 +371,7 @@ const projectsData = {
   // ✅ NEW PROJECT #1 (Web Development)
   plumberseoVisibility: {
     title: "PlumberSEO Visibility Analyzer",
-    category: "Web Development",
+    category: "AI & Automations",
     image: "./assets/images/project-plumberseo.jpg",
     overview:
       "Self-serve AI visibility reporting platform that checks how local service businesses appear across GPT/Gemini/Claude/Perplexity/Grok, with scheduling via n8n and report delivery to Google Sheets.",
